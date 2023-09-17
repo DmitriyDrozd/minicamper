@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import Header from '../../components/Header/Header';
 import styles from './PageWrapper.module.sass';
 
 interface PageWrapperProps {
@@ -7,10 +8,10 @@ interface PageWrapperProps {
 
 const PageWrapper: FC<PageWrapperProps> = ({ children }) => (
   <div className={styles.PageWrapper}>
-      <header>minicamper</header>
-      <>
+      <Header/>
+      <div className={styles.PageContent}>
           {children}
-      </>
+      </div>
   </div>
 );
 

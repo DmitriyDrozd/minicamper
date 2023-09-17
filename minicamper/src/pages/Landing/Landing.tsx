@@ -8,7 +8,7 @@ interface LandingProps {
 const Landing: FC<LandingProps> = () => (
     <PageWrapper>
         <div className={styles.Landing}>
-            Landing Component
+            Landing Page
         </div>
     </PageWrapper>
 );
