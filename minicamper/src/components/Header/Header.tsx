@@ -15,13 +15,11 @@ const navLinks: TNavLink[] = [
 ]
 
 const Header: FC<HeaderProps> = () => (
-  <div className={styles.Header}>
-    <header>
-        <div>logo</div>
-        <Navigation links={navLinks}/>
-        <div>+375 (44) 700-76-55</div>
-    </header>
-  </div>
+  <header className={styles.Header}>
+    <div>logo</div>
+    <Navigation links={navLinks}/>
+    <div>+375 (44) 700-76-55</div>
+  </header>
 );
 
 export default Header;

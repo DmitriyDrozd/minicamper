@@ -15,7 +15,7 @@ const NavigationLink: FC<NavigationLinkProps> = ({ link }) => {
 
     return (
         <div className={styles.NavigationLink} key={title}>
-            <a href={url}>{title}</a>
+            <a className={styles.Link} href={url}>{title}</a>
         </div>
     );
 }
