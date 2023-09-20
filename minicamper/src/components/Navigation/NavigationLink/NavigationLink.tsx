@@ -14,7 +14,7 @@ const NavigationLink: FC<NavigationLinkProps> = ({ link }) => {
     const { title, url } = link;
 
     return (
-        <div className={styles.NavigationLink} key={title}>
+        <div className={styles.NavigationLink}>
             <a className={styles.Link} href={url}>{title}</a>
         </div>
     );

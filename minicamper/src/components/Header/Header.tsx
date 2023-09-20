@@ -16,7 +16,7 @@ const navLinks: TNavLink[] = [
 
 const Header: FC<HeaderProps> = () => (
   <header className={styles.Header}>
-    <div>logo</div>
+    <img className={styles.Logo} src="logo.png" alt="логотип" />
     <Navigation links={navLinks}/>
     <div>+375 (44) 700-76-55</div>
   </header>

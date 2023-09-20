@@ -8,7 +8,7 @@ interface NavigationProps {
 
 const Navigation: FC<NavigationProps> = ({ links }) => (
   <div className={styles.Navigation}>
-      {links.map(link => <NavigationLink link={link} />)}
+      {links.map(link => <NavigationLink link={link} key={link.title}/>)}
   </div>
 );
 
