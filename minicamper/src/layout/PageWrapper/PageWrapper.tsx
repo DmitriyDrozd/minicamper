@@ -10,9 +10,7 @@ interface PageWrapperProps {
 const PageWrapper: FC<PageWrapperProps> = ({ children }) => (
   <div className={styles.PageWrapper}>
       <Header />
-      <div className={styles.PageContent}>
-          {children}
-      </div>
+      {children}
       <Footer />
   </div>
 );

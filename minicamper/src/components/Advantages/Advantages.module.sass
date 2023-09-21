@@ -1,6 +1,8 @@
 @import "../../style/layout"
 
 .Advantages
+  display: flex
+  flex-direction: column
   padding-bottom: $section-padding
 
   .Title
@@ -10,6 +12,7 @@
   .AdvantagesList
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     gap: 21px
 
     .Advantage
