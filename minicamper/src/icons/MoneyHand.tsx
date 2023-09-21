@@ -1,0 +1,1 @@
+export const MoneyHandIcon = () => <img src='icons/money-hand.svg' alt='ладонь с монетой' />

@@ -1,0 +1,1 @@
+export const DriversLicenseIcon = () => <img src='icons/drivers-license.svg' alt='Водительское удостоверение' />

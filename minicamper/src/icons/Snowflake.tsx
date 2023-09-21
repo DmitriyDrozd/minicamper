@@ -1,0 +1,1 @@
+export const SnowflakeIcon = () => <img src='icons/snowflake.svg' alt='снежинка' />
