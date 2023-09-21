@@ -15,11 +15,11 @@ const terms = [
         title: <div><span className={styles.Attentive}>Стаж вождения</span> от {MIN_DRIVING_EXPERIENCE} лет</div>,
     },
     {
-        title: <div><span className={styles.Attentive}>Сервисный сбор</span>{SERVICE_FEE} руб.</div>,
+        title: <div><span className={styles.Attentive}>Сервисный сбор</span> {SERVICE_FEE} руб.</div>,
         description: 'В свервисный сбор входит: уборка, мойка кемпера внутри и снаружи, заправка питьевой воды, заправка газа, заряд аккумулятора.',
     },
     {
-        title: <div><span className={styles.Attentive}>Залог</span>{PLEDGE} руб.</div>,
+        title: <div><span className={styles.Attentive}>Залог</span> {PLEDGE} руб.</div>,
         description: 'Возвращается при сдаче кемпера без происшествий.',
     },
     {
