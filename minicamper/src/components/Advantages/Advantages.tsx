@@ -39,17 +39,17 @@ const advantages = [
 ];
 
 const Advantages: FC<AdvantagesProps> = () => (
-    <div className={styles.Advantages}>
-        <h3>Преимущества путешествовать с нами</h3>
+    <section className={styles.Advantages}>
+        <h2 className={styles.Title}>Преимущества путешествовать с нами</h2>
         <div className={styles.AdvantagesList}>{advantages.map(({title, description, icon}) => (
             <div className={styles.Advantage}>
                 {icon}
-                <h4>{title}</h4>
+                <h3 className={styles.AdvantageTitle}>{title}</h3>
                 <span>{description}</span>
             </div>
         ))}
         </div>
-    </div>
+    </section>
 );
 
 export default Advantages;
