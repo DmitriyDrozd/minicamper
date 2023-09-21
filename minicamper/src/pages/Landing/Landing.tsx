@@ -1,5 +1,14 @@
 import React, { FC } from 'react';
+import Advantages from '../../components/Advantages/Advantages';
+import Callback from '../../components/Callback/Callback';
+import FAQ from '../../components/FAQ/FAQ';
 import FormBook, { TFormBookSubmitCredentials } from '../../components/FormBook/FormBook';
+import Gallery from '../../components/Gallery/Gallery';
+import Greetings from '../../components/Greetings/Greetings';
+import Quote from '../../components/Quote/Quote';
+import Rules from '../../components/Rules/Rules';
+import StayInTouch from '../../components/StayInTouch/StayInTouch';
+import Terms from '../../components/Terms/Terms';
 import styles from './Landing.module.sass';
 import PageWrapper from '../../layout/PageWrapper/PageWrapper';
 
@@ -15,7 +24,16 @@ const Landing: FC<LandingProps> = () => {
     return (
         <PageWrapper>
             <div className={styles.Landing}>
-                <FormBook onSubmit={submitClientCredentials}/>
+                <FormBook onSubmit={submitClientCredentials} />
+                <Greetings />
+                <Advantages />
+                <Terms />
+                <Quote />
+                <Rules />
+                <Gallery />
+                <FAQ />
+                <StayInTouch />
+                <Callback />
             </div>
         </PageWrapper>
     );

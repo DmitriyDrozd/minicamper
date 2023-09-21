@@ -8,6 +8,7 @@ interface NavigationProps {
 
 const Navigation: FC<NavigationProps> = ({ links }) => (
   <div className={styles.Navigation}>
+      мы не по центру!
       {links.map(link => <NavigationLink link={link} key={link.title}/>)}
   </div>
 );
