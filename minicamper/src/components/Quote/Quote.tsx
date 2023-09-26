@@ -5,7 +5,9 @@ interface QuoteProps {}
 
 const Quote: FC<QuoteProps> = () => (
   <div className={styles.Quote}>
-    Quote Component
+      <div>Посмотри на мир!</div>
+      <div>он куда удивительнее снов.</div>
+      <div>-Рэй Брэдберри</div>
   </div>
 );
 

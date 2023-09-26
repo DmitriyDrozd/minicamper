@@ -5,7 +5,7 @@ interface FaqProps {}
 
 const Faq: FC<FaqProps> = () => (
   <div className={styles.Faq}>
-    Faq Component
+    <h2></h2>
   </div>
 );
 
