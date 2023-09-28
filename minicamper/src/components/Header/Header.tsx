@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { PHONE } from '../../constants/contacts';
 import { ROUTE } from '../../constants/routes';
 import Navigation from '../Navigation/Navigation';
 import { TNavLink } from '../Navigation/NavigationLink/NavigationLink';
@@ -19,7 +20,7 @@ const Header: FC<HeaderProps> = () => (
     <header className={styles.Header}>
         <img className={styles.Logo} src="logo.png" alt="логотип"/>
         <Navigation links={navLinks}/>
-        <a href="tel:+375447007655">+375 (44) 700-76-55</ a>
+        <a href="tel:+375447007655">{PHONE}</ a>
     </header>
 );
 

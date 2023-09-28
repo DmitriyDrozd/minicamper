@@ -1,3 +1,4 @@
+import { YMaps } from '@pbe/react-yandex-maps';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './style/index.sass';
@@ -21,7 +22,9 @@ const router = createBrowserRouter([
 
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router}/>
+        <YMaps>
+            <RouterProvider router={router}/>
+        </YMaps>
     </React.StrictMode>,
 );
 
