@@ -4,6 +4,7 @@ import {
     EMAIL,
     PHONE
 } from '../../constants/contacts';
+import Contacts from '../Contacts/Contacts';
 import Map from '../Map/Map';
 import styles from './StayInTouch.module.sass';
 
@@ -14,18 +15,7 @@ const StayInTouch: FC<StayInTouchProps> = () => (
     <div className={styles.StayInTouch}>
         <div>
             <h2>Мы всегда на связи</h2>
-            <div>
-                <></>
-                {ADDRESS}
-            </div>
-            <div>
-                <></>
-                {PHONE}
-            </div>
-            <div>
-                <></>
-                {EMAIL}
-            </div>
+            <Contacts />
         </div>
         <div><Map /></div>
     </div>

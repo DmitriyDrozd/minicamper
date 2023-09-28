@@ -2,10 +2,12 @@ import React, { FC } from 'react';
 import Advantages from '../../components/Advantages/Advantages';
 import Callback from '../../components/Callback/Callback';
 import FAQ from '../../components/FAQ/FAQ';
+import Footer from '../../components/Footer/Footer';
 import FormBook, { TFormBookSubmitCredentials } from '../../components/FormBook/FormBook';
 import { TFormCallBackSubmit } from '../../components/FormCallBack/FormCallBack';
 import Gallery from '../../components/Gallery/Gallery';
 import Greetings from '../../components/Greetings/Greetings';
+import Header from '../../components/Header/Header';
 import Quote from '../../components/Quote/Quote';
 import Rules from '../../components/Rules/Rules';
 import StayInTouch from '../../components/StayInTouch/StayInTouch';
@@ -27,18 +29,22 @@ const Landing: FC<LandingProps> = () => {
     }
 
     return (
-        <PageWrapper>
-            <FormBook onSubmit={submitClientCredentials} />
-            <Greetings />
-            <Advantages />
-            <Terms />
-            <Quote />
-            <Rules />
-            <Gallery />
-            <FAQ />
-            <StayInTouch />
-            <Callback onSubmit={submitCallback}/>
-        </PageWrapper>
+        <>
+            <Header />
+            <PageWrapper>
+                <FormBook onSubmit={submitClientCredentials} />
+                <Greetings />
+                <Advantages />
+                <Terms />
+                <Quote />
+                <Rules />
+                <Gallery />
+                <FAQ />
+                <StayInTouch />
+                <Callback onSubmit={submitCallback}/>
+            </PageWrapper>
+            <Footer />
+        </>
     );
 }
 
