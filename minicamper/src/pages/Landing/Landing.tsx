@@ -3,6 +3,7 @@ import Advantages from '../../components/Advantages/Advantages';
 import Callback from '../../components/Callback/Callback';
 import FAQ from '../../components/FAQ/FAQ';
 import FormBook, { TFormBookSubmitCredentials } from '../../components/FormBook/FormBook';
+import { TFormCallBackSubmit } from '../../components/FormCallBack/FormCallBack';
 import Gallery from '../../components/Gallery/Gallery';
 import Greetings from '../../components/Greetings/Greetings';
 import Quote from '../../components/Quote/Quote';
@@ -20,6 +21,11 @@ const Landing: FC<LandingProps> = () => {
         console.log(credentials.name, credentials.date, credentials.daysCount, credentials.phone);
     }
 
+    const submitCallback = (attributes: TFormCallBackSubmit) => {
+        alert('мы вам перезвоним!');
+        console.log(attributes.name, attributes.phone, attributes.email, attributes.question);
+    }
+
     return (
         <PageWrapper>
             <FormBook onSubmit={submitClientCredentials} />
@@ -31,7 +37,7 @@ const Landing: FC<LandingProps> = () => {
             <Gallery />
             <FAQ />
             <StayInTouch />
-            <Callback />
+            <Callback onSubmit={submitCallback}/>
         </PageWrapper>
     );
 }
