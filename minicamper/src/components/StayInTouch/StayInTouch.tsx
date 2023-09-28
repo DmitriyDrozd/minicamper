@@ -13,11 +13,13 @@ interface StayInTouchProps {
 
 const StayInTouch: FC<StayInTouchProps> = () => (
     <div className={styles.StayInTouch}>
-        <div>
+        <div className={styles.Contacts}>
             <h2>Мы всегда на связи</h2>
             <Contacts />
         </div>
-        <div><Map /></div>
+        <div className={styles.Map}>
+            <Map />
+        </div>
     </div>
 );
 
