@@ -1,0 +1,1 @@
+export const ExpandIcon = () => <img src='icons/plus.svg' alt='развернуть' />

@@ -1,0 +1,1 @@
+export const CollapseIcon = () => <img src='icons/close.svg' alt='свернуть' />
