@@ -1,1 +1,3 @@
-export const CampervanIcon = () => <img src='icons/campervan.svg' alt='кемпер' />
+import { ReactSVG } from 'react-svg';
+
+export const CampervanIcon = () => <ReactSVG src='icons/campervan.svg' />

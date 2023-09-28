@@ -1,1 +1,3 @@
-export const SnowflakeIcon = () => <img src='icons/snowflake.svg' alt='снежинка' />
+import { ReactSVG } from 'react-svg';
+
+export const SnowflakeIcon = () => <ReactSVG src='icons/snowflake.svg' />

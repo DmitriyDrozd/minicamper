@@ -1,1 +1,3 @@
-export const MoneyHandIcon = () => <img src='icons/money-hand.svg' alt='ладонь с монетой' />
+import { ReactSVG } from 'react-svg';
+
+export const MoneyHandIcon = () => <ReactSVG src='icons/money-hand.svg' />

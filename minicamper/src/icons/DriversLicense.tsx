@@ -1,1 +1,3 @@
-export const DriversLicenseIcon = () => <img src='icons/drivers-license.svg' alt='Водительское удостоверение' />
+import { ReactSVG } from 'react-svg';
+
+export const DriversLicenseIcon = () => <ReactSVG src='icons/drivers-license.svg' />

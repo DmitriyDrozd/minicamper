@@ -1,1 +1,3 @@
-export const CollapseIcon = () => <img src='icons/close.svg' alt='свернуть' />
+import { ReactSVG } from 'react-svg';
+
+export const CollapseIcon = () => <ReactSVG src='icons/close.svg' />

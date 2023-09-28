@@ -1,1 +1,3 @@
-export const HomeIcon = () => <img src='icons/home.svg' alt='дом' />
+import { ReactSVG } from 'react-svg';
+
+export const HomeIcon = () => <ReactSVG src='icons/home.svg' />

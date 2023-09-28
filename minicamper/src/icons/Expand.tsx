@@ -1,1 +1,3 @@
-export const ExpandIcon = () => <img src='icons/plus.svg' alt='развернуть' />
+import { ReactSVG } from 'react-svg';
+
+export const ExpandIcon = () => <ReactSVG src='icons/plus.svg' />

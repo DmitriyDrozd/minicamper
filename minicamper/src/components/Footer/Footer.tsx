@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { UNP } from '../../constants/contacts';
 import Contacts from '../Contacts/Contacts';
 import styles from './Footer.module.sass';
 
@@ -9,19 +10,19 @@ const Footer: FC<FooterProps> = () => (
     <div className={styles.Footer}>
         <div className={styles.FooterContent}>
             <img src="logo.png" alt="логотип"/>
-            <div>
-                <div>
-                    <h4>Аренда кемпера в Минске</h4>
-                    <a href="#">Аренда кемпера</a>
-                    <a href="#">Оплата</a>
+            <div className={styles.InfoLinks}>
+                <div className={styles.InfoLinkItem}>
+                    <h4 className={styles.InfoLinkTitle}>Аренда кемпера в Минске</h4>
+                    <a className={styles.InfoLink} href="#">Аренда кемпера</a>
+                    <a className={styles.InfoLink} href="#">Оплата</a>
                 </div>
-                <div>
-                    <h4>Информация</h4>
-                    <a href="#">Условия аренды</a>
-                    <a href="#">Часто задаваемые вопросы</a>
+                <div className={styles.InfoLinkItem}>
+                    <h4 className={styles.InfoLinkTitle}>Информация</h4>
+                    <a className={styles.InfoLink} href="#">Условия аренды</a>
+                    <a className={styles.InfoLink} href="#">Часто задаваемые вопросы</a>
                 </div>
             </div>
-            <Contacts lightTheme/>
+            <Contacts lightTheme showMessengers UNP={UNP}/>
         </div>
     </div>
 );
