@@ -1,3 +1,5 @@
+@import 'layout'
+
 @mixin font-navigation
   font-size: 18px
   font-style: normal
@@ -7,3 +9,11 @@
 @mixin media-mobile
   @media (max-width: 720px)
     @content
+
+@mixin page-wrapper
+  padding: 0 $page-padding
+  max-width: $max-width
+  margin: 0 auto
+
+  @include media-mobile
+    padding: 0 $page-padding-mobile

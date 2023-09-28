@@ -1,4 +1,7 @@
-import React, { FC } from 'react';
+import React, {
+    FC,
+    useState
+} from 'react';
 import Carousel from 'react-material-ui-carousel';
 import styles from './Gallery.module.sass';
 
@@ -7,21 +10,31 @@ interface GalleryProps {}
 const path = 'gallery/';
 const images = ['1.jpg'];
 
-const Gallery: FC<GalleryProps> = () => (
-  <div className={styles.Gallery}>
-      <h2>Галерея</h2>
-      <Carousel
-          autoPlay
-          stopAutoPlayOnHover
-          swipe
-          navButtonsAlwaysVisible
-          cycleNavigation
-          animation={'slide'}
-          indicators={false}
-      >
-          {images.map( (name, i) => <img className={styles.GalleryItem} key={i} src={path + name} alt="фото кемпера" /> )}
-      </Carousel>
-  </div>
-);
+const Gallery: FC<GalleryProps> = () => {
+    const [isImgLoaded, setIsImgLoaded] = useState(false);
+
+    return (
+        <div className={styles.Gallery}>
+            <h2>Галерея</h2>
+            {
+                !isImgLoaded ? (
+                    <img src={path + images[0]} alt={'загрузка фото'} onLoad={() => setIsImgLoaded(true)} />
+                ) : (
+                    <Carousel
+                        autoPlay
+                        stopAutoPlayOnHover
+                        swipe
+                        navButtonsAlwaysVisible
+                        cycleNavigation
+                        animation={'slide'}
+                        indicators
+                    >
+                        {images.map( (name, i) => <img className={styles.GalleryItem} key={i} src={path + name} alt="фото кемпера" /> )}
+                    </Carousel>
+                )
+            }
+        </div>
+    );
+}
 
 export default Gallery;

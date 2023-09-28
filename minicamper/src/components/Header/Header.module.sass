@@ -1,12 +1,13 @@
 @import "../../style/layout.sass"
+@import "../../style/mixins.sass"
 
 .Header
   display: flex
   flex-direction: row
   justify-content: space-between
+
+  @include page-wrapper
   padding: 24px $page-padding
-  max-width: $max-width
-  margin: 0 auto
 
 .Logo
   display: inline-block

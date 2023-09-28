@@ -12,6 +12,7 @@ import Quote from '../../components/Quote/Quote';
 import Rules from '../../components/Rules/Rules';
 import StayInTouch from '../../components/StayInTouch/StayInTouch';
 import Terms from '../../components/Terms/Terms';
+import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
 import PageWrapper from '../../layout/PageWrapper/PageWrapper';
 
 interface LandingProps {
@@ -32,16 +33,16 @@ const Landing: FC<LandingProps> = () => {
         <>
             <Header />
             <PageWrapper>
-                <FormBook onSubmit={submitClientCredentials} />
-                <Greetings />
-                <Advantages />
-                <Terms />
-                <Quote />
-                <Rules />
-                <Gallery />
-                <FAQ />
-                <StayInTouch />
-                <Callback onSubmit={submitCallback}/>
+                <ContentWrapper><FormBook onSubmit={submitClientCredentials} /></ContentWrapper>
+                <ContentWrapper><Greetings /></ContentWrapper>
+                <ContentWrapper><Advantages /></ContentWrapper>
+                <ContentWrapper><Terms /></ContentWrapper>
+                <ContentWrapper><Quote /></ContentWrapper>
+                <ContentWrapper><Rules /></ContentWrapper>
+                <ContentWrapper><Gallery /></ContentWrapper>
+                <ContentWrapper><FAQ /></ContentWrapper>
+                <ContentWrapper><StayInTouch /></ContentWrapper>
+                <ContentWrapper><Callback onSubmit={submitCallback}/></ContentWrapper>
             </PageWrapper>
             <Footer />
         </>

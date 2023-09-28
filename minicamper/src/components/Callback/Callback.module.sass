@@ -1,13 +1,19 @@
 @import "../../style/layout"
+@import "../../style/colors"
+@import "../../style/mixins"
 
 .Callback
   padding-bottom: $section-padding
+  background: $active-50
 
   .PictureWrapper
     width: 520px
+    border-radius: $border-radius
+    overflow: hidden
+
+    @include media-mobile
+      max-width: 100%
 
   .Picture
     width: auto
     height: 677px
-    overflow: hidden
-    border-radius: $border-radius
