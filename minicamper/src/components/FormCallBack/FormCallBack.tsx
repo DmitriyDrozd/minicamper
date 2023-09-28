@@ -1,7 +1,8 @@
 import {
     Checkbox,
-    FormControlLabel
+    FormControlLabel,
 } from '@mui/material';
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
@@ -15,7 +16,6 @@ import React, {
 import { PHONE_MASK } from '../../constants/form';
 import { TextMaskCustom } from '../FormBook/TextMaskCustom';
 import styles from './FormCallBack.module.sass';
-
 
 export type TFormCallBackSubmit = {
     name: string,
@@ -35,7 +35,6 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
     const [question, setQuestion] = useState('');
     const submitHandler = () => onSubmit({name, phone, email, question});
 
-
     return (
         <FormGroup className={styles.FormCallBack}>
             <TextField label="Ваше имя" variant="outlined" placeholder="" value={name}
@@ -52,6 +51,10 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
             </FormControl>
             <TextField label="Адрес электронной почты" variant="outlined" placeholder="" value={email}
                        onChange={e => setEmail(e.target.value)}/>
+            <TextareaAutosize
+                minRows={3}
+                placeholder="Введите ваш вопрос"
+            />
             <FormControlLabel required control={<Checkbox />} label="Даю согласие на обработку персональных данных" />
             <Button variant="contained" onClick={submitHandler}>Перезвоните мне</Button>
         </FormGroup>

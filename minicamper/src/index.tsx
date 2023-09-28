@@ -1,13 +1,14 @@
-import { YMaps } from '@pbe/react-yandex-maps';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './style/index.sass';
-import reportWebVitals from './reportWebVitals';
+import { YMaps } from '@pbe/react-yandex-maps';
 import {
     createBrowserRouter,
     RouterProvider
 } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import Theme from './layout/Theme/Theme';
+import reportWebVitals from './reportWebVitals';
 import Landing from './pages/Landing/Landing';
+import './style/index.sass';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
@@ -22,9 +23,11 @@ const router = createBrowserRouter([
 
 root.render(
     <React.StrictMode>
-        <YMaps>
-            <RouterProvider router={router}/>
-        </YMaps>
+        <Theme>
+            <YMaps>
+                <RouterProvider router={router}/>
+            </YMaps>
+        </Theme>
     </React.StrictMode>,
 );
 

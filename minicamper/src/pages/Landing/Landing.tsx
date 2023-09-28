@@ -42,7 +42,7 @@ const Landing: FC<LandingProps> = () => {
                 <ContentWrapper><Gallery /></ContentWrapper>
                 <ContentWrapper><FAQ /></ContentWrapper>
                 <ContentWrapper><StayInTouch /></ContentWrapper>
-                <ContentWrapper><Callback onSubmit={submitCallback}/></ContentWrapper>
+                <Callback onSubmit={submitCallback}/>
             </PageWrapper>
             <Footer />
         </>

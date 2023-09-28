@@ -3,17 +3,35 @@
 @import "../../style/mixins"
 
 .Callback
-  padding-bottom: $section-padding
   background: $active-50
+  width: 100%
 
-  .PictureWrapper
-    width: 520px
-    border-radius: $border-radius
-    overflow: hidden
+  .CallbackContent
+    padding: 110px 70px
+    display: flex
+    gap: 80px
 
-    @include media-mobile
-      max-width: 100%
+    .FormWrapper
+      display: flex
+      flex-direction: column
+      gap: 16px
+      max-width: 550px
+      text-align: left
 
-  .Picture
-    width: auto
-    height: 677px
+      h2
+        margin: 0
+
+      .Questions
+        font-weight: 300
+
+    .PictureWrapper
+      width: 520px
+      border-radius: $border-radius
+      overflow: hidden
+
+      @include media-mobile
+        max-width: 100%
+
+      .Picture
+        width: auto
+        height: 677px

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import FormCallBack, { TFormCallBackSubmit } from '../FormCallBack/FormCallBack';
 import styles from './Callback.module.sass';
+import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
 
 interface CallbackProps {
     onSubmit: (attributes: TFormCallBackSubmit) => void;
@@ -9,10 +10,18 @@ interface CallbackProps {
 const Callback: FC<CallbackProps> = ({ onSubmit }) => {
     return (
         <div className={styles.Callback}>
-            <div className={styles.PictureWrapper}>
-                <img className={styles.Picture} src="call.jpg" alt="телефон в руке"/>
-            </div>
-            <FormCallBack onSubmit={onSubmit}/>
+            <ContentWrapper>
+                <div className={styles.CallbackContent}>
+                    <div className={styles.PictureWrapper}>
+                        <img className={styles.Picture} src="call.jpg" alt="телефон в руке"/>
+                    </div>
+                    <div className={styles.FormWrapper}>
+                        <h2>Вам перезвонить?</h2>
+                        <span className={styles.Questions}>Если у вас есть вопросы или вы ещё сомневаетесь, заполните форму и мы позвоним, чтобы ответить на все ваши вопросы</span>
+                        <FormCallBack onSubmit={onSubmit}/>
+                    </div>
+                </div>
+            </ContentWrapper>
         </div>
     );
 }
