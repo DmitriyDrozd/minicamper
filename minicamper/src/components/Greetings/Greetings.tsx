@@ -6,7 +6,7 @@ interface GreetingsProps {
 
 const Greetings: FC<GreetingsProps> = () => (
     <div className={styles.Greetings}>
-        <img className={styles.Picture} src="main.png" alt='кемпер'/>
+        <img className={styles.Picture} src="main.jpg" alt='кемпер'/>
         <div className={styles.GreetingsText}>
             <div>Путешествуйте<span>без границ</span></div>
             <div>Аренда автодома для настоящих искателей путешествий</div>

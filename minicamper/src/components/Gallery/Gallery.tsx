@@ -5,7 +5,7 @@ import styles from './Gallery.module.sass';
 interface GalleryProps {}
 
 const path = 'gallery/';
-const images = ['1.png', '2.png', '3.png'];
+const images = ['1.jpg'];
 
 const Gallery: FC<GalleryProps> = () => (
   <div className={styles.Gallery}>
