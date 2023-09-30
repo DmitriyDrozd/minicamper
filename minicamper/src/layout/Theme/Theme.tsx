@@ -44,6 +44,36 @@ const theme = createTheme({
                 },
             },
         },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    borderRadius,
+                    ':first-of-type': {
+                        borderRadius
+                    },
+                    ':last-of-type': {
+                        borderRadius
+                    },
+                    ':before': {
+                        content: 'none',
+                    }
+                }
+            }
+        },
+        MuiAccordionSummary: {
+            styleOverrides: {
+                content: {
+                    margin: '21px 0',
+                }
+            },
+        },
+        MuiAccordionDetails: {
+            styleOverrides: {
+                root: {
+                    textAlign: 'left',
+                }
+            }
+        }
     },
 });
 

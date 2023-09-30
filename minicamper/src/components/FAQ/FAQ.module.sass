@@ -2,3 +2,26 @@
 
 .Faq
   padding-bottom: $section-padding
+  display: flex
+  justify-content: space-between
+
+  .Title
+    position: relative
+    max-width: 480px
+
+    h2
+      text-align: left
+
+    .Icon
+      position: absolute
+      transform: translate(100%,-70%)
+
+  .Questions
+    max-width: 650px
+    display: flex
+    flex-direction: column
+    gap: 33px
+
+    .QuestionTitle
+      font-size: 22px
+      font-weight: 500

@@ -33,15 +33,19 @@ const Landing: FC<LandingProps> = () => {
         <>
             <Header />
             <PageWrapper>
-                <ContentWrapper><FormBook onSubmit={submitClientCredentials} /></ContentWrapper>
-                <ContentWrapper><Greetings /></ContentWrapper>
-                <ContentWrapper><Advantages /></ContentWrapper>
-                <ContentWrapper><Terms /></ContentWrapper>
-                <ContentWrapper><Quote /></ContentWrapper>
-                <ContentWrapper><Rules /></ContentWrapper>
-                <ContentWrapper><Gallery /></ContentWrapper>
-                <ContentWrapper><FAQ /></ContentWrapper>
-                <ContentWrapper><StayInTouch /></ContentWrapper>
+                <ContentWrapper>
+                    <>
+                        <FormBook onSubmit={submitClientCredentials} />
+                        <Greetings />
+                        <Advantages />
+                        <Terms />
+                        <Quote />
+                        <Rules />
+                        <Gallery />
+                        <FAQ />
+                        <StayInTouch />
+                    </>
+                </ContentWrapper>
                 <Callback onSubmit={submitCallback}/>
             </PageWrapper>
             <Footer />
