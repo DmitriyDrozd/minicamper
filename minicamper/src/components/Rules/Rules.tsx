@@ -29,18 +29,19 @@ const rules = [
         description: 'Юридически оформим сдачу кемпера и с радостью послушаем о ярких впечатлениях, открытиях и событиях!',
     },
 ]
-
+//fixme: ListItem constant width
 const Rules: FC<RulesProps> = () => (
   <div className={styles.Rules}>
-    <div>
-        <h2>Правила аренды кемпера</h2>
-    </div>
-    <div>{rules.map(({ title, description }, index) => (
-        <div>
-            <div>{index + 1}</div>
-            <div>{title}</div>
-            <div>{description}</div>
-        </div>
+    <h2 className={styles.Title}>Правила аренды кемпера</h2>
+    <div className={styles.List}>{rules.map(({ title, description }, index) => (
+        <>
+            <div className={styles.Item} key={title}>
+                <div className={styles.Number}>{index + 1}</div>
+                <div className={styles.Title}>{title}</div>
+                <div className={styles.Description}>{description}</div>
+            </div>
+            <div className={styles.Divider}/>
+        </>
     ))}
     </div>
   </div>
