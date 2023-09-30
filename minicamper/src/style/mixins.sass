@@ -10,6 +10,21 @@
   font-size: 22px
   font-weight: 500
 
+@mixin font-styled-title
+  text-align: center
+  font-family: inglobal
+  font-size: 55px
+  font-style: normal
+  font-weight: 700
+  line-height: normal
+  letter-spacing: 2.75px
+  text-transform: uppercase
+
+@mixin font-styled-description
+  @include font-styled-title
+  font-size: 45px
+  letter-spacing: 2.25px
+
 @mixin media-mobile
   @media (max-width: 720px)
     @content

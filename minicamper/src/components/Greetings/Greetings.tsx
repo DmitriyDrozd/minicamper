@@ -8,8 +8,8 @@ const Greetings: FC<GreetingsProps> = () => (
     <div className={styles.Greetings}>
         <img className={styles.Picture} src="main.jpg" alt='кемпер'/>
         <div className={styles.GreetingsText}>
-            <div>Путешествуйте<span>без границ</span></div>
-            <div>Аренда автодома для настоящих искателей путешествий</div>
+            <div className={styles.Rent}>Аренда автодома для настоящих искателей путешествий</div>
+            <div className={styles.Travel}><div className={styles.Description}>Путешествуйте</div><div className={styles.Title}>без границ</div></div>
         </div>
     </div>
 );

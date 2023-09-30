@@ -1,4 +1,6 @@
 @import "../../style/layout"
+@import "../../style/colors"
+@import "../../style/mixins"
 
 .Greetings
   padding-bottom: $section-padding
@@ -12,3 +14,26 @@
   .GreetingsText
     display: flex
     justify-content: space-between
+
+    .Rent
+      font-family: inglobal
+      font-size: 40px
+      font-style: normal
+      font-weight: 400
+      line-height: normal
+      letter-spacing: 2px
+      flex-basis: 50%
+      text-align: left
+
+    .Travel
+      .Title
+        @include font-styled-title
+        display: inline-flex
+        padding: 13px 29px
+        justify-content: center
+        align-items: center
+        border-radius: 20px
+        background: $quote-background
+
+      .Description
+        @include font-styled-description
