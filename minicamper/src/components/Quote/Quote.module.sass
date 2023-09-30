@@ -1,4 +1,46 @@
 @import "../../style/layout"
+@import "../../style/colors"
+
+.QuoteWrapper
+  display: flex
+  justify-content: center
 
 .Quote
   padding-bottom: $section-padding
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: max-content
+
+  .Rotated
+    display: inline-flex
+    transform: rotate(-2deg)
+    padding: 3.633px 33.011px 2.367px 33.989px
+    justify-content: center
+    align-items: center
+    border-radius: 20px
+    background: $quote-background
+
+  .Rotated,
+  .Straight
+    color: #000
+    text-align: center
+    font-family: inglobal
+    font-size: 55px
+    font-style: normal
+    font-weight: 700
+    line-height: normal
+    letter-spacing: 2.75px
+    text-transform: uppercase
+    width: max-content
+
+  .Straight
+    font-size: 45px
+    letter-spacing: 2.25px
+    position: relative
+    top: -5px
+
+  .Author
+    text-align: right
+    width: max-content
+    align-self: flex-end
