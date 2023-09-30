@@ -40,7 +40,7 @@ const Rules: FC<RulesProps> = () => (
                 <div className={styles.Title}>{title}</div>
                 <div className={styles.Description}>{description}</div>
             </div>
-            <div className={styles.Divider}/>
+            {index !== rules.length - 1 && <div className={styles.Divider}/>}
         </>
     ))}
     </div>
