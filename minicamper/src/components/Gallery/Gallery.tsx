@@ -15,7 +15,7 @@ const Gallery: FC<GalleryProps> = () => {
 
     return (
         <div className={styles.Gallery}>
-            <h2>Галерея</h2>
+            <h2 className={styles.Title}>Галерея</h2>
             {
                 !isImgLoaded ? (
                     <img src={path + images[0]} alt={'загрузка фото'} onLoad={() => setIsImgLoaded(true)} />
@@ -26,8 +26,9 @@ const Gallery: FC<GalleryProps> = () => {
                         swipe
                         navButtonsAlwaysVisible
                         cycleNavigation
-                        animation={'slide'}
                         indicators
+                        animation={'slide'}
+                        className={styles.Carousel}
                     >
                         {images.map( (name, i) => <img className={styles.GalleryItem} key={i} src={path + name} alt="фото кемпера" /> )}
                     </Carousel>
