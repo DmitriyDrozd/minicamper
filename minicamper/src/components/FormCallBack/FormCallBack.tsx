@@ -14,6 +14,7 @@ import React, {
     useState
 } from 'react';
 import { PHONE_MASK } from '../../constants/form';
+import { ButtonStyle } from '../../style/styledButton';
 import { TextMaskCustom } from '../FormBook/TextMaskCustom';
 import styles from './FormCallBack.module.sass';
 
@@ -56,7 +57,7 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
                 placeholder="Введите ваш вопрос"
             />
             <FormControlLabel required control={<Checkbox />} label="Даю согласие на обработку персональных данных" />
-            <Button variant="contained" onClick={submitHandler}>Перезвоните мне</Button>
+            <Button variant="contained" onClick={submitHandler} sx={ButtonStyle}>Перезвоните мне</Button>
         </FormGroup>
     );
 }

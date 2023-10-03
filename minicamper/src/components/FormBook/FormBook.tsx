@@ -16,6 +16,7 @@ import ru from 'date-fns/locale/ru';
 import {
     PHONE_MASK
 } from '../../constants/form';
+import { ButtonStyle } from '../../style/styledButton';
 import styles from './FormBook.module.sass';
 import { TextMaskCustom } from './TextMaskCustom';
 
@@ -70,7 +71,8 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                     inputComponent={TextMaskCustom as any}
                 />
             </FormControl>
-            <Button variant="contained" onClick={submitHandler}>Узнать о наличии</Button>
+            <Button variant="contained" onClick={submitHandler} sx={ButtonStyle}
+            >Узнать о наличии</Button>
         </FormGroup>
     );
 };
