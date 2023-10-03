@@ -73,7 +73,29 @@ const theme = createTheme({
                     textAlign: 'left',
                 }
             }
-        }
+        },
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    alignItems: 'center',
+                    boxShadow: 'none',
+                }
+            }
+        },
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    justifyContent: 'space-between',
+                }
+            }
+        },
+        MuiAppBar: {
+            styleOverrides: {
+                root: {
+                    background: '#FAF0E6',
+                }
+            }
+        },
     },
 });
 

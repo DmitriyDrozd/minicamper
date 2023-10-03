@@ -1,3 +1,23 @@
+@import "../../style/mixins"
+@import "../../style/layout"
+@import "../../style/colors"
+
 .Navigation
-  display: flex
-  gap: 20px
+
+  .NavWrapper
+    @include media-desktop
+      padding: 10px $page-padding
+      max-width: $max-width
+      width: 100%
+
+  .NavLink
+    gap: 30px
+
+  .NavLink,
+  .Phone
+    display: flex
+    align-items: center
+
+  .Number
+    color: $primary-text-color
+    text-decoration: none

@@ -26,7 +26,11 @@
   letter-spacing: 2.25px
 
 @mixin media-mobile
-  @media (max-width: 720px)
+  @media (max-width: 600px)
+    @content
+
+@mixin media-desktop
+  @media (min-width: 600px)
     @content
 
 @mixin page-wrapper

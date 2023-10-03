@@ -1,16 +1,121 @@
+import {
+    AppBar,
+    Box,
+    CssBaseline,
+    Divider,
+    Drawer,
+    IconButton,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Toolbar,
+} from '@mui/material';
+import Button from '@mui/material/Button';
 import React, { FC } from 'react';
+import { PHONE } from '../../constants/contacts';
+import { ROUTE } from '../../constants/routes';
+import { LogoIcon } from '../../icons/Logo';
+import { MenuIcon } from '../../icons/Menu';
 import styles from './Navigation.module.sass';
-import NavigationLink, { TNavLink } from './NavigationLink/NavigationLink';
 
-interface NavigationProps {
-    links: TNavLink[]
+export type TNavLink = {
+    title: string,
+    url: string,
 }
 
-const Navigation: FC<NavigationProps> = ({ links }) => (
-  <div className={styles.Navigation}>
-      мы не по центру!
-      {links.map(link => <NavigationLink link={link} key={link.title}/>)}
-  </div>
-);
+const drawerWidth = 240;
+const navLinks: TNavLink[] = [
+    {title: 'О нас', url: ROUTE.rent},
+    {title: 'Условия аренды', url: ROUTE.conditions},
+    {title: 'Правила аренды', url: ROUTE.rules},
+    {title: 'Галерея', url: ROUTE.gallery},
+    {title: 'Вопросы', url: ROUTE.gallery},
+    {title: 'Контакты', url: ROUTE.contacts}
+];
+
+const Navigation: FC = () => {
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen((prevState) => !prevState);
+    };
+
+    const Logo = <div><LogoIcon /></div>;
+    const Phone = <a className={styles.Number} href="tel:+375447007655">{PHONE}</ a>;
+
+    const drawer = (
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', justifyContent: 'space-between' }}>
+            {Logo}
+            <Divider />
+            <List>
+                {navLinks.map((item) => (
+                    <ListItem key={item.title} disablePadding>
+                        <ListItemButton sx={{ textAlign: 'center' }}>
+                            <ListItemText primary={item.title} />
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
+            {Phone}
+        </Box>
+    );
+
+    const container = window !== undefined ? () => window.document.body : undefined;
+
+    return (
+        <div className={styles.Navigation}>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar component="nav">
+                    <div className={styles.NavWrapper}>
+                        <Toolbar sx={{ padding: '0', paddingLeft: { xs: '0' }, paddingRight: { xs: '0' } }}>
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="start"
+                                onClick={handleDrawerToggle}
+                                sx={{ mr: 2, display: { sm: 'none' } }}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+
+                            <Box sx={{ display: { xs: 'none', sm: 'flex' }, 'justify-content': 'space-between', 'width': '100%' }}>
+                                {Logo}
+                                <div className={styles.NavLink}>
+                                    {navLinks.map((link) => (
+                                        <Button key={link.title} sx={{ color: '#000', textTransform: 'none' }}>
+                                            {link.title}
+                                        </Button>
+                                    ))}
+                                </div>
+                                <div className={styles.Phone}>
+                                    {Phone}
+                                </div>
+                            </Box>
+                        </Toolbar>
+                    </div>
+                </AppBar>
+                <nav>
+                    <Drawer
+                        container={container}
+                        variant="temporary"
+                        open={mobileOpen}
+                        onClose={handleDrawerToggle}
+                        ModalProps={{
+                            keepMounted: true, // Better open performance on mobile.
+                        }}
+                        sx={{
+                            display: { xs: 'block', sm: 'none' },
+                            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        }}
+                    >
+                        {drawer}
+                    </Drawer>
+                </nav>
+            </Box>
+        </div>
+    );
+}
 
 export default Navigation;
