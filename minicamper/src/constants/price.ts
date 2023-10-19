@@ -1,7 +1,7 @@
 /**
  * Сервисный сбор
  */
-export const SERVICE_FEE = 15;
+export const SERVICE_FEE = 40;
 
 /**
  * Залог

@@ -7,7 +7,9 @@ export const ButtonStyle = {
     fontWeight: 500,
     '&:hover': {background: '#FFC700'},
     width: '244px',
-    padding: '0 47px',
+    minHeight: '64px',
+    paddingLeft: '47px',
+    paddingRight: '47px',
     lineHeight: 'normal',
     textWrap: 'nowrap',
 };
