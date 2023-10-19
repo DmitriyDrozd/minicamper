@@ -1,4 +1,12 @@
+@import "../../style/mixins"
+
 .FormBook
   display: flex
   justify-content: space-between
   padding-bottom: 30px
+  @include media-mobile
+    flex-direction: column
+
+  .FormItem
+    @include media-mobile
+      width: 100%

@@ -45,7 +45,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
 
     return (
         <FormGroup className={styles.FormBook} row>
-            <TextField label="Ваше имя" variant="outlined" placeholder="" value={name}
+            <TextField className={styles.FormItem} label="Ваше имя" variant="outlined" placeholder="" value={name}
                        onChange={e => setName(e.target.value)}/>
             <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={ru}>
                 <DatePicker
@@ -58,10 +58,11 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                 />
             </LocalizationProvider>
             <TextField
+                className={styles.FormItem}
                 inputProps={{inputMode: 'numeric', pattern: '[0-9]*', min: 3, type: 'number'}}
                 label="Количество дней" variant="outlined"
                 placeholder="" value={daysCount} onChange={e => setDaysCount(e.target.value)}/>
-            <FormControl variant="standard">
+            <FormControl variant="standard" className={styles.FormItem}>
                 <InputLabel htmlFor="formatted-text-mask-input">Номер телефона</InputLabel>
                 <Input
                     value={phone}
@@ -71,7 +72,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                     inputComponent={TextMaskCustom as any}
                 />
             </FormControl>
-            <Button variant="contained" onClick={submitHandler} sx={ButtonStyle}
+            <Button className={styles.FormItem} variant="contained" onClick={submitHandler} sx={ButtonStyle}
             >Узнать о наличии</Button>
         </FormGroup>
     );
