@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/minicamper/static/css/main.16d4203f.css",
-    "main.js": "/minicamper/static/js/main.dbf427c0.js",
+    "main.css": "/minicamper/static/css/main.d72dfe37.css",
+    "main.js": "/minicamper/static/js/main.a804f672.js",
     "static/js/787.c0366ae8.chunk.js": "/minicamper/static/js/787.c0366ae8.chunk.js",
     "index.html": "/minicamper/index.html",
-    "main.16d4203f.css.map": "/minicamper/static/css/main.16d4203f.css.map",
-    "main.dbf427c0.js.map": "/minicamper/static/js/main.dbf427c0.js.map",
+    "main.d72dfe37.css.map": "/minicamper/static/css/main.d72dfe37.css.map",
+    "main.a804f672.js.map": "/minicamper/static/js/main.a804f672.js.map",
     "787.c0366ae8.chunk.js.map": "/minicamper/static/js/787.c0366ae8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16d4203f.css",
-    "static/js/main.dbf427c0.js"
+    "static/css/main.d72dfe37.css",
+    "static/js/main.a804f672.js"
   ]
 }
