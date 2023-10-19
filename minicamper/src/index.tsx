@@ -1,9 +1,5 @@
 import React from 'react';
 import { YMaps } from '@pbe/react-yandex-maps';
-import {
-    createBrowserRouter,
-    RouterProvider
-} from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import Theme from './layout/Theme/Theme';
 import reportWebVitals from './reportWebVitals';
@@ -14,18 +10,11 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
 );
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Landing/>,
-    },
-]);
-
 root.render(
     <React.StrictMode>
         <Theme>
             <YMaps>
-                <RouterProvider router={router}/>
+                <Landing/>
             </YMaps>
         </Theme>
     </React.StrictMode>,

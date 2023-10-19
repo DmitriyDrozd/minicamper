@@ -1,13 +1,20 @@
 @import "../../style/layout"
+@import "../../style/mixins"
 
 .Faq
   padding-bottom: $section-padding
   display: flex
   justify-content: space-between
 
+  @include media-mobile
+    flex-direction: column
+
   .Title
     position: relative
     max-width: 480px
+
+    @include media-mobile
+      padding-bottom: 40px
 
     h2
       text-align: left
@@ -15,6 +22,10 @@
     .Icon
       position: absolute
       transform: translate(100%,-70%)
+
+      @include media-mobile
+        left: 0
+        transform: translate(130%, -90%)
 
   .Questions
     max-width: 650px

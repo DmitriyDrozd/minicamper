@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
+import { isMobile } from '../../utils/device';
 import styles from './Rules.module.sass';
 
-interface RulesProps {}
+interface RulesProps {
+}
 
 const rules = [
     {
@@ -28,23 +30,28 @@ const rules = [
         title: 'Принимаем кемпер',
         description: 'Юридически оформим сдачу кемпера и с радостью послушаем о ярких впечатлениях, открытиях и событиях!',
     },
-]
+];
 //fixme: ListItem constant width
 const Rules: FC<RulesProps> = () => (
-  <div id='rules' className={styles.Rules}>
-    <h2 className={styles.Title}>Правила аренды кемпера</h2>
-    <div className={styles.List}>{rules.map(({ title, description }, index) => (
-        <>
-            <div className={styles.Item} key={title}>
-                <div className={styles.Number}>{index + 1}</div>
-                <div className={styles.Title}>{title}</div>
-                <div className={styles.Description}>{description}</div>
-            </div>
-            {index !== rules.length - 1 && <div className={styles.Divider}/>}
-        </>
-    ))}
+    <div id="rules" className={styles.Rules}>
+        <h2 className={styles.Title}>Правила аренды кемпера</h2>
+        <div className={styles.List}>
+            {rules.map(({title, description}, index) => {
+                const isDividerDisplayed = !isMobile() && index !== rules.length - 1;
+
+                return (
+                    <>
+                        <div className={styles.Item} key={title}>
+                            <div className={styles.Number}>{index + 1}</div>
+                            <div className={styles.Title}>{title}</div>
+                            <div className={styles.Description}>{description}</div>
+                        </div>
+                        {isDividerDisplayed && <div className={styles.Divider}/>}
+                    </>
+                );
+            })}
+        </div>
     </div>
-  </div>
 );
 
 export default Rules;

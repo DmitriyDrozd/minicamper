@@ -20,10 +20,18 @@
   letter-spacing: 2.75px
   text-transform: uppercase
 
+  @include media-mobile
+    font-size: 30px
+    letter-spacing: 2px
+
 @mixin font-styled-description
   @include font-styled-title
-  font-size: 45px
+  font-size: 40px
   letter-spacing: 2.25px
+
+  @include media-mobile
+    font-size: 24px
+    letter-spacing: 2px
 
 @mixin media-mobile
   @media (max-width: 600px)

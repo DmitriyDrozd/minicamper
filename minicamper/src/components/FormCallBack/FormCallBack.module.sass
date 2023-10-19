@@ -1,6 +1,12 @@
+@import "../../style/mixins"
+
 .FormCallBack
   display: flex
   gap: 16px
 
   .Question
     padding: 20px 30px
+
+  .Action
+    @include media-mobile
+      width: 100%

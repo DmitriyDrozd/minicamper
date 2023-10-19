@@ -7,6 +7,9 @@
   display: flex
   gap: 78px
 
+  @include media-mobile
+    flex-direction: column
+
   .Title
     text-align: left
     max-width: 447px
@@ -28,6 +31,10 @@
       display: flex
       align-items: center
       gap: 34px
+
+      @include media-mobile
+        flex-direction: column
+        padding-bottom: 30px
 
       .Number
         width: 68px

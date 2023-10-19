@@ -58,7 +58,7 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
                 placeholder="Введите ваш вопрос"
             />
             <FormControlLabel required control={<Checkbox />} label="Даю согласие на обработку персональных данных" />
-            <Button variant="contained" onClick={submitHandler} sx={ButtonStyle}>Перезвоните мне</Button>
+            <Button className={styles.Action} variant="contained" onClick={submitHandler} sx={ButtonStyle}>Перезвоните мне</Button>
         </FormGroup>
     );
 }

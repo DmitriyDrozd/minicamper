@@ -11,6 +11,7 @@ import {
 } from '../../constants/price';
 import { CheckIcon } from '../../icons/Check';
 import { ButtonStyle } from '../../style/styledButton';
+import { isMobile } from '../../utils/device';
 import styles from './Terms.module.sass';
 
 const terms = [
@@ -55,13 +56,15 @@ const Terms: FC<TermsProps> = () => {
                         Менее {MIN_TERM}-х суток оговаривается отдельно
                     </div>
                     <div className={styles.PriceItem}>
-                        <Button variant="contained" onClick={onClick} sx={ButtonStyle}>Узнать о наличии</Button>
+                        <Button variant="contained" onClick={onClick} sx={ButtonStyle} className={styles.Action}>Узнать о наличии</Button>
                     </div>
                 </div>
             </div>
-            <div className={styles.Picture}>
-                <img src='terms-picture.jpg' alt='песик в кемпере' />
-            </div>
+            {!isMobile() && (
+                <div className={styles.Picture}>
+                    <img src='terms-picture.jpg' alt='песик в кемпере' />
+                </div>
+            )}
         </section>
     );
 }

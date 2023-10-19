@@ -1,9 +1,13 @@
 @import "../../style/layout"
+@import "../../style/mixins"
 
 .StayInTouch
   padding-bottom: $section-padding
   display: flex
   gap: 60px
+
+  @include media-mobile
+  flex-direction: column
 
   .Contacts
     max-width: 360px
