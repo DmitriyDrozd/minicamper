@@ -1,7 +1,6 @@
 {
   "name": "minicamper",
   "version": "0.1.0",
-  "homepage": "https://dmitriydrozd.github.io/minicamper/",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
