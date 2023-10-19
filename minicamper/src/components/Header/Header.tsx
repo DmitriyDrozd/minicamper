@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = () => (
     <header className={styles.Header}>
-        <Navigation />
+        <Navigation/>
     </header>
 );
 

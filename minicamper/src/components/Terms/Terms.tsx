@@ -40,7 +40,7 @@ const Terms: FC<TermsProps> = () => {
     const onClick = () => window.document.querySelector('body')?.scrollTo({ top: 0, behavior: 'smooth' });
 
     return (
-        <section className={styles.Terms}>
+        <section id='terms' className={styles.Terms}>
             <div className={styles.Info}>
                 <h2 className={styles.Title}>Условия аренды кемпера</h2>
                 <div className={styles.TermsList}>{terms.map(({title, description}) => (

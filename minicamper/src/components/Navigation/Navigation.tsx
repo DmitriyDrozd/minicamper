@@ -14,27 +14,21 @@ import {
 import Button from '@mui/material/Button';
 import React, { FC } from 'react';
 import { PHONE } from '../../constants/contacts';
-import { ROUTE } from '../../constants/routes';
+import {
+    LINKS,
+} from '../../constants/routes';
 import { LogoIcon } from '../../icons/Logo';
 import { MenuIcon } from '../../icons/Menu';
+import { scrollToById } from '../../utils/scroll';
 import styles from './Navigation.module.sass';
 
-export type TNavLink = {
-    title: string,
-    url: string,
+const drawerWidth = 240;
+
+interface INavigation {
 }
 
-const drawerWidth = 240;
-const navLinks: TNavLink[] = [
-    {title: 'О нас', url: ROUTE.rent},
-    {title: 'Условия аренды', url: ROUTE.conditions},
-    {title: 'Правила аренды', url: ROUTE.rules},
-    {title: 'Галерея', url: ROUTE.gallery},
-    {title: 'Вопросы', url: ROUTE.gallery},
-    {title: 'Контакты', url: ROUTE.contacts}
-];
-
-const Navigation: FC = () => {
+const Navigation: FC<INavigation> = () => {
+    const navLinks = LINKS;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
@@ -51,7 +45,7 @@ const Navigation: FC = () => {
             <List>
                 {navLinks.map((item) => (
                     <ListItem key={item.title} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton sx={{ textAlign: 'center' }} onClick={scrollToById(item.url)}>
                             <ListItemText primary={item.title} />
                         </ListItemButton>
                     </ListItem>
@@ -68,7 +62,7 @@ const Navigation: FC = () => {
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
                 <AppBar component="nav">
-                    <div className={styles.NavWrapper}>
+                    <div id='header' className={styles.NavWrapper}>
                         <Toolbar sx={{ padding: '0', paddingLeft: { xs: '0' }, paddingRight: { xs: '0' } }}>
                             <IconButton
                                 color="inherit"
@@ -84,7 +78,7 @@ const Navigation: FC = () => {
                                 {Logo}
                                 <div className={styles.NavLink}>
                                     {navLinks.map((link) => (
-                                        <Button key={link.title} sx={{ color: '#000', textTransform: 'none' }}>
+                                        <Button key={link.title} sx={{ color: '#000', textTransform: 'none' }} onClick={scrollToById(link.url)}>
                                             {link.title}
                                         </Button>
                                     ))}

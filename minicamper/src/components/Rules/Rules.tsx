@@ -31,7 +31,7 @@ const rules = [
 ]
 //fixme: ListItem constant width
 const Rules: FC<RulesProps> = () => (
-  <div className={styles.Rules}>
+  <div id='rules' className={styles.Rules}>
     <h2 className={styles.Title}>Правила аренды кемпера</h2>
     <div className={styles.List}>{rules.map(({ title, description }, index) => (
         <>

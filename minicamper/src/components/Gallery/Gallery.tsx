@@ -14,7 +14,7 @@ const Gallery: FC<GalleryProps> = () => {
     const [isImgLoaded, setIsImgLoaded] = useState(false);
 
     return (
-        <div className={styles.Gallery}>
+        <div id='gallery' className={styles.Gallery}>
             <h2 className={styles.Title}>Галерея</h2>
             {
                 !isImgLoaded ? (

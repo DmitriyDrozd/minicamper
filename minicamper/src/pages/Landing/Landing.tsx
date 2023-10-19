@@ -31,7 +31,7 @@ const Landing: FC<LandingProps> = () => {
 
     return (
         <>
-            <Header />
+            <Header/>
             <PageWrapper>
                 <ContentWrapper>
                     <>
@@ -48,7 +48,7 @@ const Landing: FC<LandingProps> = () => {
                 </ContentWrapper>
                 <Callback onSubmit={submitCallback}/>
             </PageWrapper>
-            <Footer />
+            <Footer/>
         </>
     );
 }

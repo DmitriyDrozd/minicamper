@@ -75,7 +75,7 @@ const Faq: FC<FaqProps> = () => {
         };
 
     return (
-        <div className={styles.Faq}>
+        <div id='faq' className={styles.Faq}>
             <div className={styles.Title}>
                 <h2>Часто задаваемые вопросы</h2>
                 <div className={styles.Icon}>

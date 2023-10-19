@@ -53,7 +53,8 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
             <TextField label="Адрес электронной почты" variant="outlined" placeholder="" value={email}
                        onChange={e => setEmail(e.target.value)}/>
             <TextareaAutosize
-                minRows={3}
+                className={styles.Question}
+                minRows={6}
                 placeholder="Введите ваш вопрос"
             />
             <FormControlLabel required control={<Checkbox />} label="Даю согласие на обработку персональных данных" />
