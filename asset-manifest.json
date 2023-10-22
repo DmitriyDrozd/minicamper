@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/minicamper/static/css/main.583f68e7.css",
-    "main.js": "/minicamper/static/js/main.b3aef0f0.js",
-    "static/js/787.c0366ae8.chunk.js": "/minicamper/static/js/787.c0366ae8.chunk.js",
-    "index.html": "/minicamper/index.html",
-    "main.583f68e7.css.map": "/minicamper/static/css/main.583f68e7.css.map",
-    "main.b3aef0f0.js.map": "/minicamper/static/js/main.b3aef0f0.js.map",
-    "787.c0366ae8.chunk.js.map": "/minicamper/static/js/787.c0366ae8.chunk.js.map"
+    "main.css": "/static/css/main.d2f181cf.css",
+    "main.js": "/static/js/main.b62233af.js",
+    "static/js/787.c0366ae8.chunk.js": "/static/js/787.c0366ae8.chunk.js",
+    "index.html": "/index.html",
+    "main.d2f181cf.css.map": "/static/css/main.d2f181cf.css.map",
+    "main.b62233af.js.map": "/static/js/main.b62233af.js.map",
+    "787.c0366ae8.chunk.js.map": "/static/js/787.c0366ae8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.583f68e7.css",
-    "static/js/main.b3aef0f0.js"
+    "static/css/main.d2f181cf.css",
+    "static/js/main.b62233af.js"
   ]
 }
