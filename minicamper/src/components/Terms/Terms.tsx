@@ -62,7 +62,7 @@ const Terms: FC<TermsProps> = () => {
             </div>
             {!isMobile() && (
                 <div className={styles.Picture}>
-                    <img src='terms-picture.jpg' alt='песик в кемпере' />
+                    <img loading='lazy' src='terms-picture.jpg' alt='песик в кемпере' />
                 </div>
             )}
         </section>

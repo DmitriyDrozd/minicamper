@@ -30,7 +30,7 @@ const Gallery: FC<GalleryProps> = () => {
                         animation={'slide'}
                         className={styles.Carousel}
                     >
-                        {images.map( (name, i) => <img className={styles.GalleryItem} key={i} src={path + name} alt="фото кемпера" /> )}
+                        {images.map( (name, i) => <img loading='lazy' className={styles.GalleryItem} key={i} src={path + name} alt="фото кемпера" /> )}
                     </Carousel>
                 )
             }

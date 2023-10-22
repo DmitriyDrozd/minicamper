@@ -15,7 +15,7 @@ const Callback: FC<CallbackProps> = ({ onSubmit }) => {
                 <div className={styles.CallbackContent}>
                     {!isMobile() && (
                         <div className={styles.PictureWrapper}>
-                            <img className={styles.Picture} src="call.jpg" alt="телефон в руке"/>
+                            <img loading='lazy' className={styles.Picture} src="call.jpg" alt="телефон в руке"/>
                         </div>
                     )}
                     <div className={styles.FormWrapper}>
