@@ -3,13 +3,14 @@ import React, { FC } from 'react';
 import {
     ADDRESS,
     EMAIL,
-    PHONE
+    PHONE,
+    PHONE_RAW
 } from '../../constants/contacts';
 import { InstagramIcon } from '../../icons/Instagram';
 import { LocationIcon } from '../../icons/Location';
 import { MailIcon } from '../../icons/Mail';
 import { PhoneIcon } from '../../icons/Phone';
-import { TelegramIcon } from '../../icons/Telegram';
+// import { TelegramIcon } from '../../icons/Telegram';
 import { ViberIcon } from '../../icons/Viber';
 import styles from './Contacts.module.sass';
 
@@ -35,12 +36,13 @@ const Contacts: FC<ContactsProps> = ({lightTheme = false, UNP, showMessengers = 
         </div>
         {showMessengers && (
             <div className={styles.Messengers}>
-                <a href="#"><TelegramIcon /></a>
-                <a href="#"><InstagramIcon /></a>
-                <a href="#"><ViberIcon /></a>
+                {/*<a href="#"><TelegramIcon /></a>*/}
+                <a target='_blank' href="https://instagram.com/camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA=="><InstagramIcon /></a>
+                <a href={`viber://chat?number=%2B${PHONE_RAW}`}><ViberIcon /></a>
             </div>
         )}
     </div>
 );
+// todo: спросить нужно ли телеграм ссылка
 
 export default Contacts;
