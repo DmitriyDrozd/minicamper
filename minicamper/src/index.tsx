@@ -13,7 +13,12 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Theme>
-            <YMaps>
+            <YMaps
+                query={{
+                    ns: "use-load-option",
+                    load: "Map,Placemark,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,control.ZoomControl",
+                }}
+            >
                 <Landing/>
             </YMaps>
         </Theme>

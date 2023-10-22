@@ -37,7 +37,7 @@ const Contacts: FC<ContactsProps> = ({lightTheme = false, UNP, showMessengers = 
         {showMessengers && (
             <div className={styles.Messengers}>
                 {/*<a href="#"><TelegramIcon /></a>*/}
-                <a target='_blank' href="https://instagram.com/camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA=="><InstagramIcon /></a>
+                <a target='_blank' rel="noreferrer" href="https://instagram.com/camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA=="><InstagramIcon /></a>
                 <a href={`viber://chat?number=%2B${PHONE_RAW}`}><ViberIcon /></a>
             </div>
         )}

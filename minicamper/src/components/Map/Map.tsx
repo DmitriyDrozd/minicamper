@@ -12,19 +12,21 @@ const center = [53.849179, 27.708616];
 
 const addressMarkerCenter = [53.849179, 27.708616];
 
-interface MapProps {}
+interface MapProps {
+}
 
 //todo: zoom issue
 const MapComponent: FC<MapProps> = () => {
     return (
-        <Map defaultState={{ center, zoom: 16 }} width='100%' height='100%'>
-            <FullscreenControl />
-            <GeolocationControl />
-            <TypeSelector />
-            <ZoomControl />
-            <Placemark geometry={addressMarkerCenter} />
+        <Map defaultState={{center, zoom: 16}} width="100%" height="100%"
+             modules={['control.FullscreenControl', 'control.GeolocationControl', 'control.TypeSelector', 'control.ZoomControl']}>
+            <FullscreenControl/>
+            <GeolocationControl/>
+            <TypeSelector/>
+            <ZoomControl/>
+            <Placemark geometry={addressMarkerCenter}/>
         </Map>
     );
-}
+};
 
 export default React.memo(MapComponent);
