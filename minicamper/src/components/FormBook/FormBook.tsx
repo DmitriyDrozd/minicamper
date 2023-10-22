@@ -49,6 +49,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                        onChange={e => setName(e.target.value)}/>
             <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={ru}>
                 <DatePicker
+                    className={styles.BookDate}
                     label="Дата старта"
                     value={date}
                     onChange={(value) => {

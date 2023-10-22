@@ -2,7 +2,6 @@ import {
     Accordion,
     AccordionDetails,
     AccordionSummary,
-    Typography
 } from '@mui/material';
 import React, { FC } from 'react';
 import { CollapseIcon } from '../../icons/Collapse';
@@ -55,6 +54,7 @@ const collapseIcon = <CollapseIcon/>;
 const FaqItem: FC<FaqItemProps> = ({question, answer, isExpanded, handleChange}) => (
     <Accordion expanded={isExpanded} onChange={handleChange}>
         <AccordionSummary
+            className={styles.TitleWrapper}
             expandIcon={isExpanded ? collapseIcon : expandIcon}
             aria-controls={`${question}-content`}
             id={`${question}-header`}

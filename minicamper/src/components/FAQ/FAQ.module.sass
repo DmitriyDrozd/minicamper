@@ -25,14 +25,19 @@
       transform: translate(100%,-70%)
 
       @include media-mobile
-        left: 0
-        transform: translate(130%, -90%)
+        transform: translate(70%, -70%)
 
   .Questions
     max-width: 650px
     display: flex
     flex-direction: column
     gap: 33px
+
+    @include media-mobile
+      gap: 18px
+
+    .TitleWrapper
+      text-align: left
 
     .QuestionTitle
       font-size: 22px

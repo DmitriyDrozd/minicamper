@@ -1,5 +1,6 @@
 @import 'colors.sass'
 @import 'fonts.sass'
+@import 'mixins.sass'
 
 @import-normalize
 
@@ -31,6 +32,9 @@ h1, h2
   line-height: normal
   letter-spacing: 2px
   text-transform: uppercase
+
+  @include media-mobile
+    font-size: 28px
 
 h2
   margin: 0

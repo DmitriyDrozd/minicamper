@@ -10,6 +10,7 @@
   @include media-mobile
     flex-direction: column
     padding-bottom: $section-padding-mobile
+    gap: 40px
 
   .Title
     text-align: left
@@ -36,8 +37,10 @@
       @include media-mobile
         flex-direction: column
         padding-bottom: 30px
+        gap: 18px
 
       .Number
+        flex-basis: 68px
         width: 68px
         height: 68px
         border-radius: 50%
@@ -49,9 +52,11 @@
         @include font-title
 
       .Title
+        flex-basis: 20%
         @include font-title
         text-transform: uppercase
 
       .Description
+        flex-basis: 65%
         font-weight: 300
         text-align: left
