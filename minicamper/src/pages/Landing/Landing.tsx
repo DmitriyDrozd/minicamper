@@ -35,7 +35,7 @@ const Landing: FC<LandingProps> = () => {
             <PageWrapper>
                 <ContentWrapper>
                     <>
-                        <FormBook onSubmit={submitClientCredentials} />
+                        {/*<FormBook onSubmit={submitClientCredentials} />*/}
                         <Greetings />
                         <Advantages />
                         <Terms />
@@ -46,7 +46,7 @@ const Landing: FC<LandingProps> = () => {
                         <StayInTouch />
                     </>
                 </ContentWrapper>
-                <Callback onSubmit={submitCallback}/>
+                {/*<Callback onSubmit={submitCallback}/>*/}
             </PageWrapper>
             <Footer/>
         </>
