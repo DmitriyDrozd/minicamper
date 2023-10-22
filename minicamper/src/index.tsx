@@ -1,5 +1,4 @@
 import React from 'react';
-import { YMaps } from '@pbe/react-yandex-maps';
 import ReactDOM from 'react-dom/client';
 import Theme from './layout/Theme/Theme';
 import reportWebVitals from './reportWebVitals';
@@ -13,14 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Theme>
-            <YMaps
-                query={{
-                    ns: "use-load-option",
-                    load: "Map,Placemark,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,control.ZoomControl",
-                }}
-            >
-                <Landing/>
-            </YMaps>
+            <Landing/>
         </Theme>
     </React.StrictMode>,
 );

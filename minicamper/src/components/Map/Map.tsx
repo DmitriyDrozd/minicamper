@@ -5,7 +5,8 @@ import {
     GeolocationControl,
     TypeSelector,
     ZoomControl,
-    Placemark
+    Placemark,
+    YMaps
 } from '@pbe/react-yandex-maps';
 
 const center = [53.849179, 27.708616];
@@ -18,14 +19,25 @@ interface MapProps {
 //todo: zoom issue
 const MapComponent: FC<MapProps> = () => {
     return (
-        <Map defaultState={{center, zoom: 16}} width="100%" height="100%"
-             modules={['control.FullscreenControl', 'control.GeolocationControl', 'control.TypeSelector', 'control.ZoomControl']}>
-            <FullscreenControl/>
-            <GeolocationControl/>
-            <TypeSelector/>
-            <ZoomControl/>
-            <Placemark geometry={addressMarkerCenter}/>
-        </Map>
+        <YMaps
+            query={{
+                ns: "use-load-option",
+                load: "Map,Placemark,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,control.ZoomControl",
+            }}
+        >
+            <Map defaultState={{center, zoom: 16}} width="100%" height="100%" controls={[
+                'FullscreenControl',
+                'GeolocationControl',
+                'TypeSelector',
+                'ZoomControl'
+            ]}>
+                <FullscreenControl/>
+                <GeolocationControl/>
+                <TypeSelector/>
+                <ZoomControl/>
+                <Placemark geometry={addressMarkerCenter}/>
+            </Map>
+        </YMaps>
     );
 };
 
