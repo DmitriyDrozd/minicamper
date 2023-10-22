@@ -12,7 +12,7 @@ interface FooterProps {
 const Footer: FC<FooterProps> = () => (
     <div id='contacts' className={styles.Footer}>
         <div className={styles.FooterContent}>
-            <LogoBigIcon />
+            <LogoBigIcon className={styles.LogoBig}/>
             <div className={styles.InfoLinks}>
                 <div className={styles.InfoLinkItem}>
                     <h4 className={styles.InfoLinkTitle}>Аренда кемпера в Минске</h4>

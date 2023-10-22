@@ -21,11 +21,36 @@ const theme = createTheme({
                 },
             },
         },
+        MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    height: '48px',
+                },
+            },
+        },
+        MuiInput: {
+            styleOverrides: {
+                underline: {
+                    paddingLeft: '14px',
+                },
+                root: {
+                    ':before': {
+                        left: '14px',
+                        right: '14px',
+                    },
+                    ':after': {
+                        left: '14px',
+                        right: '14px',
+                    }
+                }
+            }
+        },
         MuiOutlinedInput: {
             styleOverrides: {
                 root: {
                     borderRadius,
                     border: 'none',
+                    height: '64px',
                 },
             },
         },

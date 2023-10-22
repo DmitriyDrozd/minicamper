@@ -35,12 +35,11 @@ const Navigation: FC<INavigation> = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
-    const Logo = <div><LogoIcon /></div>;
     const Phone = <a className={styles.Number} href="tel:+375447007655">{PHONE}</ a>;
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', justifyContent: 'space-between' }}>
-            {Logo}
+            <div className={styles.LogoSide}><LogoIcon /></div>
             <Divider />
             <List>
                 {navLinks.map((item) => (
@@ -75,7 +74,7 @@ const Navigation: FC<INavigation> = () => {
                             </IconButton>
 
                             <Box sx={{ display: { xs: 'none', sm: 'flex' }, 'justify-content': 'space-between', 'width': '100%' }}>
-                                {Logo}
+                                <div><LogoIcon /></div>
                                 <div className={styles.NavLink}>
                                     {navLinks.map((link) => (
                                         <Button key={link.title} sx={{ color: '#000', textTransform: 'none' }} onClick={scrollToById(link.url)}>

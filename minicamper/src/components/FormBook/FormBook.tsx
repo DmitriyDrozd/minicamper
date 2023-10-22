@@ -63,7 +63,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                 label="Количество дней" variant="outlined"
                 placeholder="" value={daysCount} onChange={e => setDaysCount(e.target.value)}/>
             <FormControl variant="standard" className={styles.FormItem}>
-                <InputLabel htmlFor="formatted-text-mask-input">Номер телефона</InputLabel>
+                <InputLabel className={styles.InputLabel} htmlFor="formatted-text-mask-input">Номер телефона</InputLabel>
                 <Input
                     value={phone}
                     onChange={e => setPhone(e.target.value)}

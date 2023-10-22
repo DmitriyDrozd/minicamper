@@ -41,7 +41,7 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
             <TextField label="Ваше имя" variant="outlined" placeholder="" value={name}
                        onChange={e => setName(e.target.value)}/>
             <FormControl variant="standard">
-                <InputLabel htmlFor="formatted-text-mask-input">Номер телефона</InputLabel>
+                <InputLabel className={styles.InputLabel} htmlFor="formatted-text-mask-input">Номер телефона</InputLabel>
                 <Input
                     value={phone}
                     onChange={e => setPhone(e.target.value)}
@@ -57,7 +57,7 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
                 minRows={6}
                 placeholder="Введите ваш вопрос"
             />
-            <FormControlLabel required control={<Checkbox />} label="Даю согласие на обработку персональных данных" />
+            <FormControlLabel control={<Checkbox />} label="Даю согласие на обработку персональных данных *" />
             <Button className={styles.Action} variant="contained" onClick={submitHandler} sx={ButtonStyle}>Перезвоните мне</Button>
         </FormGroup>
     );

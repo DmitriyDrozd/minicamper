@@ -14,10 +14,16 @@
     display: flex
     justify-content: space-between
     align-items: center
+
     @include media-mobile
       flex-direction: column
       gap: 30px
       padding: $page-padding-mobile 30px
+
+      .LogoBig
+        svg
+          width: 200px
+          height: 200px
 
     .Logotype
       width: 276px

@@ -5,6 +5,9 @@
 .Greetings
   padding-bottom: $section-padding
 
+  @include media-mobile
+    padding-bottom: $section-padding-mobile
+
   .Picture
     width: 100%
     height: auto
@@ -17,6 +20,7 @@
     justify-content: space-between
     @include media-mobile
       flex-direction: column
+      gap: 36px
 
     .Rent
       font-family: inglobal
@@ -27,6 +31,10 @@
       letter-spacing: 2px
       flex-basis: 50%
       text-align: left
+
+      @include media-mobile
+        font-size: 28px
+        letter-spacing: 1px
 
     .Travel
       .Title

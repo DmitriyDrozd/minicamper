@@ -1,8 +1,12 @@
 @import "../../style/layout"
+@import "../../style/mixins"
 
 .Gallery
   padding-bottom: $section-padding
   width: 100%
+
+  @include media-mobile
+    padding-bottom: $section-padding-mobile
 
   .Title
     text-align: left
