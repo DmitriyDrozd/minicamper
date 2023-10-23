@@ -9,9 +9,9 @@ import {
     YMaps
 } from '@pbe/react-yandex-maps';
 
-const center = [53.849179, 27.708616];
+const center = [53.848834,27.707675];
 
-const addressMarkerCenter = [53.849179, 27.708616];
+const addressMarkerCenter = [53.848834,27.707675];
 
 interface MapProps {
 }
