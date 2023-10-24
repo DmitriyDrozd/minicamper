@@ -12,6 +12,13 @@ const borderRadius = '20px';
 
 const theme = createTheme({
     components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    fontFamily: '"Exo 2", sans-serif'
+                }
+            }
+        },
         MuiTextField: {
             styleOverrides: {
                 root: {

@@ -1,6 +1,7 @@
 export const ButtonStyle = {
     borderRadius: '20px',
     background: '#FFC700',
+    boxShadow: 'none',
     color: '#000',
     textTransform: 'none',
     fontSize: '18px',
