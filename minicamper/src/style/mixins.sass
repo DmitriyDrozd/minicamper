@@ -41,6 +41,10 @@
   @media (min-width: 600px)
     @content
 
+@mixin media-tablet
+  @media (max-width: 1024px)
+    @content
+
 @mixin page-wrapper
   padding: 0 $page-padding
   max-width: $max-width

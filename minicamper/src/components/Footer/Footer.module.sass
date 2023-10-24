@@ -15,15 +15,17 @@
     justify-content: space-between
     align-items: center
 
-    @include media-mobile
+    @include media-tablet
       flex-direction: column
       gap: 30px
-      padding: $page-padding-mobile 30px
 
       .LogoBig
         svg
           width: 200px
           height: 200px
+
+    @include media-mobile
+      padding: $page-padding-mobile 30px
 
     .Logotype
       width: 276px
@@ -39,7 +41,8 @@
         flex-direction: column
         gap: 8px
         font-weight: 300
-        @include media-mobile
+
+        @include media-tablet
           align-items: center
 
         .InfoLinkTitle

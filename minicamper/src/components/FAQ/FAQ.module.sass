@@ -6,8 +6,10 @@
   display: flex
   justify-content: space-between
 
-  @include media-mobile
+  @include media-tablet
     flex-direction: column
+
+  @include media-mobile
     padding-bottom: $section-padding-mobile
 
   .Title
@@ -19,6 +21,8 @@
 
     h2
       text-align: left
+      position: relative
+      z-index: 1
 
     .Icon
       position: absolute
