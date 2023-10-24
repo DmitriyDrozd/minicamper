@@ -8,10 +8,10 @@ import {
     Placemark,
     YMaps
 } from '@pbe/react-yandex-maps';
+import { ADDRESS_COORDINATES } from '../../constants/contacts';
 
-const center = [53.848834,27.707675];
-
-const addressMarkerCenter = [53.848834,27.707675];
+const center = ADDRESS_COORDINATES;
+const addressMarkerCenter = ADDRESS_COORDINATES;
 
 interface MapProps {
 }

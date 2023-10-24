@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React, { FC } from 'react';
 import {
     ADDRESS,
+    ADDRESS_COORDINATES,
     EMAIL,
     PHONE,
     PHONE_RAW
@@ -21,29 +22,34 @@ interface ContactsProps {
     handleCenterMap?: () => void;
 }
 
-const Contacts: FC<ContactsProps> = ({lightTheme = false, UNP, showMessengers = false, handleCenterMap = () => {}}) => (
-    <div className={classNames(styles.Contacts, {[styles.ContactsLight]: lightTheme})}>
-        <div className={styles.Address}>
-            <div className={styles.AddressItem} onClick={handleCenterMap}>
-                <LocationIcon/>{ADDRESS}
+const Contacts: FC<ContactsProps> = ({lightTheme = false, UNP, showMessengers = false, handleCenterMap = () => {}}) => {
+    const lat = ADDRESS_COORDINATES[0];
+    const lon = ADDRESS_COORDINATES[1];
+
+    return (
+        <div className={classNames(styles.Contacts, {[styles.ContactsLight]: lightTheme})}>
+            <div className={styles.Address}>
+                <div className={styles.AddressItem} onClick={handleCenterMap}>
+                    <LocationIcon/><a target='_blank' rel="noreferrer" href={`https://yandex.ru/maps/?pt=${lon},${lat}&z=18&l=map`}>{ADDRESS}</a>
+                </div>
+                <div className={styles.AddressItem}>
+                    <PhoneIcon/><a href={`tel:+${PHONE_RAW}`}>{PHONE}</a>
+                </div>
+                <div className={styles.AddressItem}>
+                    <MailIcon/><a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                </div>
+                {UNP && <div>УНП {UNP}</div>}
             </div>
-            <div className={styles.AddressItem}>
-                <PhoneIcon/><a href={`tel:+${PHONE_RAW}`}>{PHONE}</a>
-            </div>
-            <div className={styles.AddressItem}>
-                <MailIcon/><a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-            </div>
-            {UNP && <div>УНП {UNP}</div>}
+            {showMessengers && (
+                <div className={styles.Messengers}>
+                    {/*<a href="#"><TelegramIcon /></a>*/}
+                    <a target='_blank' rel="noreferrer" href="https://instagram.com/camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA=="><InstagramIcon /></a>
+                    <a href={`viber://chat?number=%2B${PHONE_RAW}`}><ViberIcon /></a>
+                </div>
+            )}
         </div>
-        {showMessengers && (
-            <div className={styles.Messengers}>
-                {/*<a href="#"><TelegramIcon /></a>*/}
-                <a target='_blank' rel="noreferrer" href="https://instagram.com/camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA=="><InstagramIcon /></a>
-                <a href={`viber://chat?number=%2B${PHONE_RAW}`}><ViberIcon /></a>
-            </div>
-        )}
-    </div>
-);
+    );
+}
 // todo: спросить нужно ли телеграм ссылка
 
 export default Contacts;
