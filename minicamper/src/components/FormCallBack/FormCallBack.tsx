@@ -41,11 +41,9 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
 
     const submitHandler = async () => {
         setIsMailSent(true);
-        setSubmitLabel('Отправка...');
+        setSubmitLabel('Вопрос отправлен!');
 
         await onSubmit({name, phone, email, question});
-
-        setSubmitLabel('Вопрос отправлен!');
     };
 
     return (

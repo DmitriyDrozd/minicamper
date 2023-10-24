@@ -47,11 +47,9 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
 
     const submitHandler = async () => {
         setIsMailSent(true);
-        setSubmitLabel('Отправка...');
+        setSubmitLabel('Заявка отправлена!');
 
         await onSubmit({name, date, phone, daysCount});
-
-        setSubmitLabel('Заявка отправлена!');
     }
 
     return (
