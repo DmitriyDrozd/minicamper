@@ -13,12 +13,17 @@ import {
 } from '@mui/material';
 import Button from '@mui/material/Button';
 import React, { FC } from 'react';
-import { PHONE } from '../../constants/contacts';
+import {
+    PHONE,
+    PHONE_RAW
+} from '../../constants/contacts';
 import {
     LINKS,
 } from '../../constants/routes';
+import { InstagramIcon } from '../../icons/Instagram';
 import { LogoIcon } from '../../icons/Logo';
 import { MenuIcon } from '../../icons/Menu';
+import { ViberIcon } from '../../icons/Viber';
 import { scrollToById } from '../../utils/scroll';
 import styles from './Navigation.module.sass';
 
@@ -38,7 +43,7 @@ const Navigation: FC<INavigation> = () => {
     const Phone = <a className={styles.Number} href="tel:+375447007655">{PHONE}</ a>;
 
     const mobileMenu = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', justifyContent: 'space-between' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', justifyContent: 'space-between' }} className={styles.SideBar}>
             <div className={styles.LogoSide}><LogoIcon /></div>
             <Divider />
             <List>
@@ -50,7 +55,14 @@ const Navigation: FC<INavigation> = () => {
                     </ListItem>
                 ))}
             </List>
-            {Phone}
+            <Divider />
+            <div className={styles.SideBarContacts}>
+                {Phone}
+                <div className={styles.Messengers}>
+                    <a target='_blank' rel="noreferrer" href="https://instagram.com/camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA=="><InstagramIcon /></a>
+                    <a href={`viber://chat?number=%2B${PHONE_RAW}`}><ViberIcon /></a>
+                </div>
+            </div>
         </Box>
     );
 
