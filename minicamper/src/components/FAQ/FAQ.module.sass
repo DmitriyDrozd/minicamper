@@ -1,6 +1,8 @@
 @import "../../style/layout"
 @import "../../style/mixins"
 
+$questionmark-height: 20px
+
 .Faq
   padding-bottom: $section-padding
   display: flex
@@ -30,6 +32,10 @@
 
       @include media-mobile
         transform: translate(70%, -70%)
+
+    .StickyTitle
+      position: sticky
+      top: calc($header-height + $questionmark-height)
 
   .Questions
     max-width: 650px

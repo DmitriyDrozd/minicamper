@@ -34,7 +34,9 @@ const rules = [
 //fixme: ListItem constant width
 const Rules: FC<RulesProps> = () => (
     <div id="rules" className={styles.Rules}>
-        <h2 className={styles.Title}>Правила аренды кемпера</h2>
+        <div className={styles.Title}>
+            <h2 className={styles.StickyTitle}>Правила аренды кемпера</h2>
+        </div>
         <div className={styles.List}>
             {rules.map(({title, description}, index) => {
                 const isDividerDisplayed = !isMobile() && index !== rules.length - 1;

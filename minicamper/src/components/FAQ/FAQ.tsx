@@ -111,9 +111,11 @@ const Faq: FC<FaqProps> = () => {
     return (
         <div id='faq' className={styles.Faq}>
             <div className={styles.Title}>
-                <h2>Часто задаваемые вопросы</h2>
-                <div className={styles.Icon}>
-                    <QuestionIcon />
+                <div className={styles.StickyTitle}>
+                    <h2>Часто задаваемые вопросы</h2>
+                    <div className={styles.Icon}>
+                        <QuestionIcon />
+                    </div>
                 </div>
             </div>
             <div className={styles.Questions}>
