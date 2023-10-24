@@ -1,4 +1,5 @@
 @import "../../style/colors.sass"
+@import "../../style/mixins.sass"
 @import "../../style/layout.sass"
 
 .PageWrapper
@@ -9,3 +10,9 @@
   justify-content: center
   color: $primary-text-color
   margin-top: $header-height
+
+  @include media-tablet
+    padding-top: $header-height
+
+  @include media-mobile
+    padding-top: unset

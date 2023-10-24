@@ -74,10 +74,10 @@ const Navigation: FC<INavigation> = () => {
                             </IconButton>
 
                             <Box sx={{ display: { xs: 'none', sm: 'flex' }, 'justify-content': 'space-between', 'width': '100%' }}>
-                                <div><LogoIcon /></div>
+                                <div className={styles.Clickable} onClick={scrollToById('header')}><LogoIcon /></div>
                                 <div className={styles.NavLink}>
                                     {navLinks.map((link) => (
-                                        <Button key={link.title} sx={{ color: '#000', textTransform: 'none' }} onClick={scrollToById(link.url)}>
+                                        <Button key={link.title} sx={{ color: '#000', textTransform: 'none', fontSize: '16px' }} onClick={scrollToById(link.url)}>
                                             {link.title}
                                         </Button>
                                     ))}
