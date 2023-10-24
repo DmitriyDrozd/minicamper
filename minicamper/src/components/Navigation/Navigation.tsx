@@ -37,7 +37,7 @@ const Navigation: FC<INavigation> = () => {
 
     const Phone = <a className={styles.Number} href="tel:+375447007655">{PHONE}</ a>;
 
-    const drawer = (
+    const mobileMenu = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', justifyContent: 'space-between' }}>
             <div className={styles.LogoSide}><LogoIcon /></div>
             <Divider />
@@ -62,18 +62,18 @@ const Navigation: FC<INavigation> = () => {
                 <CssBaseline />
                 <AppBar component="nav">
                     <div id='header' className={styles.NavWrapper}>
-                        <Toolbar sx={{ padding: '0', paddingLeft: { xs: '0' }, paddingRight: { xs: '0' } }}>
+                        <Toolbar sx={{ padding: '0', paddingLeft: { xs: '0' }, paddingRight: { xs: '0' }, justifyContent: { xs: 'center' }}}>
                             <IconButton
                                 color="inherit"
                                 aria-label="open drawer"
                                 edge="start"
                                 onClick={handleDrawerToggle}
-                                sx={{ mr: 2, display: { sm: 'none' } }}
+                                sx={{ mr: 2, display: { lg: 'none' } }}
                             >
                                 <MenuIcon />
                             </IconButton>
 
-                            <Box sx={{ display: { xs: 'none', sm: 'flex' }, 'justify-content': 'space-between', 'width': '100%' }}>
+                            <Box sx={{ display: { xs: 'none', lg: 'flex' }, 'justify-content': 'space-between', 'width': '100%' }}>
                                 <div className={styles.Clickable} onClick={scrollToById('header')}><LogoIcon /></div>
                                 <div className={styles.NavLink}>
                                     {navLinks.map((link) => (
@@ -99,11 +99,11 @@ const Navigation: FC<INavigation> = () => {
                             keepMounted: true, // Better open performance on mobile.
                         }}
                         sx={{
-                            display: { xs: 'block', sm: 'none' },
+                            display: { xs: 'block', lg: 'none' },
                             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                         }}
                     >
-                        {drawer}
+                        {mobileMenu}
                     </Drawer>
                 </nav>
             </Box>
