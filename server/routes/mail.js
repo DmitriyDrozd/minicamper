@@ -20,7 +20,6 @@ const transporter = nodemailer.createTransport({
     secure: true,
 });
 
-
 /* POST email */
 router.post('/book', function (req, res) {
     const {body} = req;

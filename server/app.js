@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 
 var mailRouter = require('./routes/mail');
 
@@ -20,6 +20,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", 'https://minicamper.by');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Options");
+  next();
+});
 
 app.use(mailRouter);
 
