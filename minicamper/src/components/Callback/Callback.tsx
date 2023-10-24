@@ -5,7 +5,7 @@ import styles from './Callback.module.sass';
 import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
 
 interface CallbackProps {
-    onSubmit: (attributes: TFormCallBackSubmit) => void;
+    onSubmit: (attributes: TFormCallBackSubmit) => Promise<void>;
 }
 
 const Callback: FC<CallbackProps> = ({ onSubmit }) => {

@@ -14,20 +14,28 @@ import StayInTouch from '../../components/StayInTouch/StayInTouch';
 import Terms from '../../components/Terms/Terms';
 import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
 import PageWrapper from '../../layout/PageWrapper/PageWrapper';
+import {
+    sendBook,
+    sendFeedback
+} from '../../service/mailService';
+import {
+    getBookHtml,
+    getFeedbackHtml
+} from '../../utils/mail';
 
 interface LandingProps {
 }
 
 const Landing: FC<LandingProps> = () => {
-    const submitClientCredentials = (credentials: TFormBookSubmitCredentials) => {
-        alert('имейл отправлен!');
-        console.log(credentials.name, credentials.date, credentials.daysCount, credentials.phone);
-    }
+    const submitClientCredentials = async (credentials: TFormBookSubmitCredentials): Promise<void> => {
+        const html = getBookHtml(credentials);
+        await sendBook(html);
+    };
 
-    const submitCallback = (attributes: TFormCallBackSubmit) => {
-        alert('мы вам перезвоним!');
-        console.log(attributes.name, attributes.phone, attributes.email, attributes.question);
-    }
+    const submitCallback = async (attributes: TFormCallBackSubmit): Promise<void> => {
+        const html = getFeedbackHtml(attributes);
+        await sendFeedback(html);
+    };
 
     return (
         <>
@@ -35,22 +43,22 @@ const Landing: FC<LandingProps> = () => {
             <PageWrapper>
                 <ContentWrapper>
                     <>
-                        {/*<FormBook onSubmit={submitClientCredentials} />*/}
-                        <Greetings />
-                        <Advantages />
-                        <Terms />
-                        <Quote />
-                        <Rules />
-                        <Gallery />
-                        <FAQ />
-                        <StayInTouch />
+                        <FormBook onSubmit={submitClientCredentials}/>
+                        <Greetings/>
+                        <Advantages/>
+                        <Terms/>
+                        <Quote/>
+                        <Rules/>
+                        <Gallery/>
+                        <FAQ/>
+                        <StayInTouch/>
                     </>
                 </ContentWrapper>
-                {/*<Callback onSubmit={submitCallback}/>*/}
+                <Callback onSubmit={submitCallback}/>
             </PageWrapper>
             <Footer/>
         </>
     );
-}
+};
 
 export default Landing;

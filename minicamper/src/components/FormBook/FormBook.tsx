@@ -28,7 +28,7 @@ export type TFormBookSubmitCredentials = {
 }
 
 interface FormBookProps {
-    onSubmit: (credentials: TFormBookSubmitCredentials) => void;
+    onSubmit: (credentials: TFormBookSubmitCredentials) => Promise<void>;
 }
 
 /**
@@ -41,7 +41,18 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
     const [date, setDate] = useState<Date>(today);
     const [phone, setPhone] = useState('+375');
     const [daysCount, setDaysCount] = useState('');
-    const submitHandler = () => onSubmit({name, date, phone, daysCount});
+
+    const [isMailSent, setIsMailSent] = useState(false);
+    const [submitLabel, setSubmitLabel] = useState('Узнать о наличии');
+
+    const submitHandler = async () => {
+        setIsMailSent(true);
+        setSubmitLabel('Отправка...');
+
+        await onSubmit({name, date, phone, daysCount});
+
+        setSubmitLabel('Заявка отправлена!');
+    }
 
     return (
         <FormGroup className={styles.FormBook} row>
@@ -73,8 +84,8 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                     inputComponent={TextMaskCustom as any}
                 />
             </FormControl>
-            <Button className={styles.FormItem} variant="contained" onClick={submitHandler} sx={ButtonStyle}
-            >Узнать о наличии</Button>
+            <Button disabled={isMailSent} className={styles.FormItem} variant="contained" onClick={submitHandler} sx={ButtonStyle}
+            >{submitLabel}</Button>
         </FormGroup>
     );
 };
