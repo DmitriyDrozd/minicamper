@@ -10,27 +10,28 @@ import { InstagramIcon } from '../../icons/Instagram';
 import { LocationIcon } from '../../icons/Location';
 import { MailIcon } from '../../icons/Mail';
 import { PhoneIcon } from '../../icons/Phone';
-// import { TelegramIcon } from '../../icons/Telegram';
 import { ViberIcon } from '../../icons/Viber';
 import styles from './Contacts.module.sass';
+// import { TelegramIcon } from '../../icons/Telegram';
 
 interface ContactsProps {
     lightTheme?: boolean;
     UNP?: string;
     showMessengers?: boolean;
+    handleCenterMap?: () => void;
 }
 
-const Contacts: FC<ContactsProps> = ({lightTheme = false, UNP, showMessengers = false}) => (
+const Contacts: FC<ContactsProps> = ({lightTheme = false, UNP, showMessengers = false, handleCenterMap = () => {}}) => (
     <div className={classNames(styles.Contacts, {[styles.ContactsLight]: lightTheme})}>
         <div className={styles.Address}>
-            <div className={styles.AddressItem}>
+            <div className={styles.AddressItem} onClick={handleCenterMap}>
                 <LocationIcon/>{ADDRESS}
             </div>
             <div className={styles.AddressItem}>
-                <PhoneIcon/>{PHONE}
+                <PhoneIcon/><a href={`tel:+${PHONE_RAW}`}>{PHONE}</a>
             </div>
             <div className={styles.AddressItem}>
-                <MailIcon/>{EMAIL}
+                <MailIcon/><a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </div>
             {UNP && <div>УНП {UNP}</div>}
         </div>

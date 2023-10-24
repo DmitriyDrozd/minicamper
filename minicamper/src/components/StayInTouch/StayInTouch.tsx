@@ -1,9 +1,4 @@
 import React, { FC } from 'react';
-import {
-    ADDRESS,
-    EMAIL,
-    PHONE
-} from '../../constants/contacts';
 import Contacts from '../Contacts/Contacts';
 import Map from '../Map/Map';
 import styles from './StayInTouch.module.sass';
