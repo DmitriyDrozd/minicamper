@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 });
 
 /* POST email */
-router.post('/book', function (req, res) {
+router.post('/mailer/book', function (req, res) {
     const {body} = req;
     const {html} = body;
 
@@ -43,7 +43,7 @@ router.post('/book', function (req, res) {
     });
 });
 
-router.post('/feedback', function (req, res) {
+router.post('/mailer/feedback', function (req, res) {
     const {body} = req;
     const {html} = body;
 
