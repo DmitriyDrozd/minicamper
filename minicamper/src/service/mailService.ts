@@ -1,14 +1,15 @@
 
-const makePOSTRequest = async (html: string, subject: string, path: string): Promise<void> => {
-    const url = `http://minicamper.by/mailer/${path}`;
+const makePOSTRequest = async (html: string, path: string): Promise<void> => {
+    const url = `https://minicamper.by/mailer/${path}`;
     const options = {
         method: 'POST',
         headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json;charset=UTF-8',
+            Accept: '*/*',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Connection': 'keep-alive',
+            'Content-Type': 'application/json',
         },
-        subject,
-        html: JSON.stringify({html})
+        body: JSON.stringify({ html })
     }
 
     const res = await fetch(url, options);
@@ -16,9 +17,9 @@ const makePOSTRequest = async (html: string, subject: string, path: string): Pro
 };
 
 export const sendBook = async (html: string): Promise<void> => {
-    return await makePOSTRequest(html, 'Заявка - наличие свободных дат', 'book');
+    return await makePOSTRequest(html, 'book');
 };
 
 export const sendFeedback = async (html: string): Promise<void> => {
-    return await makePOSTRequest(html, 'Заявка - возникли вопросы', 'feedback');
+    return await makePOSTRequest(html, 'feedback');
 };
