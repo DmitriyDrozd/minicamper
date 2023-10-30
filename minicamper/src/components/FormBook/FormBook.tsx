@@ -82,7 +82,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                     inputComponent={TextMaskCustom as any}
                 />
             </FormControl>
-            <Button disabled={isMailSent} className={styles.FormItem} variant="contained" onClick={submitHandler} sx={ButtonStyle}
+            <Button disabled={isMailSent} variant="contained" onClick={submitHandler} sx={ButtonStyle}
             >{submitLabel}</Button>
         </FormGroup>
     );

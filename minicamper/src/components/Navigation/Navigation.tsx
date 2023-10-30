@@ -85,7 +85,7 @@ const Navigation: FC<INavigation> = () => {
                                 <MenuIcon />
                             </IconButton>
 
-                            <Box sx={{ display: { xs: 'none', lg: 'flex' }, 'justify-content': 'space-between', 'width': '100%' }}>
+                            <Box sx={{ display: { xs: 'none', lg: 'flex' }, 'justifyContent': 'space-between', 'width': '100%' }}>
                                 <div className={styles.Clickable} onClick={scrollToById('header')}><LogoIcon /></div>
                                 <div className={styles.NavLink}>
                                     {navLinks.map((link) => (

@@ -21,6 +21,7 @@ const MapComponent: FC<MapProps> = () => {
     return (
         <YMaps
             query={{
+                apikey: 'ce3667c4-47aa-40c3-98ed-df981cb29bec',
                 ns: "use-load-option",
                 load: "Map,Placemark,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,control.ZoomControl",
             }}

@@ -42,14 +42,14 @@ const Rules: FC<RulesProps> = () => (
                 const isDividerDisplayed = !isMobile() && index !== rules.length - 1;
 
                 return (
-                    <>
-                        <div className={styles.Item} key={title}>
+                    <React.Fragment key={title}>
+                        <div className={styles.Item}>
                             <div className={styles.Number}>{index + 1}</div>
                             <div className={styles.Title}>{title}</div>
                             <div className={styles.Description}>{description}</div>
                         </div>
                         {isDividerDisplayed && <div className={styles.Divider}/>}
-                    </>
+                    </React.Fragment>
                 );
             })}
         </div>

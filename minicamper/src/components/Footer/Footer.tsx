@@ -16,7 +16,7 @@ const Footer: FC<FooterProps> = () => (
             <div className={styles.InfoLinks}>
                 <div className={styles.InfoLinkItem}>
                     <h4 className={styles.InfoLinkTitle}>Аренда кемпера в Минске</h4>
-                    {LINKS.map(({ title, url }) => <span onClick={scrollToById(url)} className={styles.InfoLink}>{title}</span>)}
+                    {LINKS.map(({ title, url }) => <span onClick={scrollToById(url)} className={styles.InfoLink} key={title}>{title}</span>)}
                 </div>
             </div>
             <Contacts lightTheme showMessengers UNP={UNP}/>

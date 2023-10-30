@@ -44,8 +44,8 @@ const Terms: FC<TermsProps> = () => {
         <section id='terms' className={styles.Terms}>
             <div className={styles.Info}>
                 <h2 className={styles.Title}>Условия аренды кемпера</h2>
-                <div className={styles.TermsList}>{terms.map(({title, description}) => (
-                    <div className={styles.Term}>
+                <div className={styles.TermsList}>{terms.map(({title, description}, index) => (
+                    <div className={styles.Term} key={index}>
                         <div className={styles.TermTitle}><CheckIcon />{title}</div>
                         {description && <div className={styles.TermDescription}>{description}</div>}
                     </div>

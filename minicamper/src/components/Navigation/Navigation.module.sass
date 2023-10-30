@@ -25,12 +25,14 @@
 
 .Navigation
   .NavWrapper
-    @include media-desktop
-      padding: 10px $page-padding
-      max-width: $max-width
-      width: 100%
+    padding: 10px $page-padding
+    max-width: $max-width
+    width: 100%
 
   .Clickable
+    display: flex
+    align-items: center
+
     &:hover
       cursor: pointer
 

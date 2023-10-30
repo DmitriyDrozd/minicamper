@@ -42,7 +42,7 @@ const Advantages: FC<AdvantagesProps> = () => (
     <section id='about' className={styles.Advantages}>
         <h2 className={styles.Title}>Преимущества путешествовать с нами</h2>
         <div className={styles.AdvantagesList}>{advantages.map(({title, description, icon}) => (
-            <div className={styles.Advantage}>
+            <div className={styles.Advantage} key={title}>
                 {icon}
                 <h3 className={styles.AdvantageTitle}>{title}</h3>
                 <span>{description}</span>
