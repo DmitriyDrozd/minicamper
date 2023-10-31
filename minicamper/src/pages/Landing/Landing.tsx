@@ -49,9 +49,11 @@ const Landing: FC<LandingProps> = () => {
                     <>
                         <Advantages/>
                         <Terms/>
-                        <Quote/>
-                        <Rules/>
                     </>
+                </ContentWrapper>
+                <Quote/>
+                <ContentWrapper>
+                    <Rules/>
                 </ContentWrapper>
                 <Gallery/>
                 <ContentWrapper>

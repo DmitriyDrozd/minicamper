@@ -3,6 +3,16 @@
 @import "../../style/mixins"
 
 .QuoteWrapper
+  width: 100%
+  @include background-icon-wrapper
+
+  .Background
+    width: 100%
+    @include background-icon-container
+    top: -40%
+    transform: none
+
+.QuoteContent
   display: flex
   justify-content: center
 
