@@ -2,8 +2,15 @@
 @import "../../style/colors"
 @import "../../style/mixins"
 
+.GreetingsWrapper
+  @include background-icon-wrapper
+
+  .Background
+    @include background-icon-container
+
 .Greetings
   padding-bottom: $section-padding
+  position: relative
 
   @include media-mobile
     padding-bottom: $section-padding-mobile

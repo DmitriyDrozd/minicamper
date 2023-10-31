@@ -1,6 +1,18 @@
 @import "../../style/layout"
 @import "../../style/mixins"
 
+.GalleryWrapper
+  width: 100%
+  @include background-icon-wrapper
+
+  .Background
+    @include background-icon-container
+    transform: scale(1.1)
+    top: 60%
+
+    @include media-mobile
+      top: 50%
+
 .Gallery
   padding-bottom: $section-padding
   width: 100%
@@ -13,10 +25,9 @@
 
   .Carousel
     min-height: 400px
-    max-height: 760px //fixme: indicators disappear
-    margin: 40px
-    border-radius: $border-radius
+    margin: 40px 0
 
     .GalleryItem
       width: 100%
       height: auto
+      border-radius: $border-radius

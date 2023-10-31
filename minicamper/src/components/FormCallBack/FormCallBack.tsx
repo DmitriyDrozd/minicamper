@@ -2,7 +2,6 @@ import {
     Checkbox,
     FormControlLabel,
 } from '@mui/material';
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
@@ -64,10 +63,9 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
             </FormControl>
             <TextField required label="Адрес электронной почты" variant="outlined" placeholder="" value={email}
                        onChange={e => setEmail(e.target.value)}/>
-            <TextareaAutosize
+            <textarea
                 required
                 className={styles.Question}
-                minRows={6}
                 placeholder="Введите ваш вопрос"
                 onChange={e => setQuestion(e.target.value)}
             />
