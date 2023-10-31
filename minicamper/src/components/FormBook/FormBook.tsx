@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, {
     FC,
     useState
@@ -53,7 +54,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
     }
 
     return (
-        <FormGroup className={styles.FormBook} row>
+        <FormGroup className={classNames(styles.FormBook, styles.FormBookResponsive)} row>
             <TextField className={styles.FormItem} label="Ваше имя" variant="outlined" placeholder="" value={name}
                        onChange={e => setName(e.target.value)}/>
             <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={ru}>
@@ -82,7 +83,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
                     inputComponent={TextMaskCustom as any}
                 />
             </FormControl>
-            <Button disabled={isMailSent} variant="contained" onClick={submitHandler} sx={ButtonStyle}
+            <Button disabled={isMailSent} variant="contained" onClick={submitHandler} sx={ButtonStyle} className={styles.Submit}
             >{submitLabel}</Button>
         </FormGroup>
     );

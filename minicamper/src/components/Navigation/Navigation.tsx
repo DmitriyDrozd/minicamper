@@ -80,7 +80,7 @@ const Navigation: FC<INavigation> = () => {
                                 aria-label="open drawer"
                                 edge="start"
                                 onClick={handleDrawerToggle}
-                                sx={{ mr: 2, display: { lg: 'none' } }}
+                                sx={{ mr: 2, display: { lg: 'none' }, marginLeft: 0, marginRight: 0 }}
                             >
                                 <MenuIcon />
                             </IconButton>

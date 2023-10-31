@@ -30,7 +30,7 @@
   letter-spacing: 2.25px
 
   @include media-mobile
-    font-size: 24px
+    font-size: 22px
     letter-spacing: 1px
 
 @mixin media-mobile
@@ -45,10 +45,17 @@
   @media (max-width: 1024px)
     @content
 
+@mixin media-medium
+  @media (max-width: 1600px)
+    @content
+
 @mixin page-wrapper
   padding: 0 $page-padding
   max-width: $max-width
   margin: 0 auto
+
+  @include media-medium
+    padding: 0 $page-padding-medium
 
   @include media-mobile
     padding: 0 $page-padding-mobile
