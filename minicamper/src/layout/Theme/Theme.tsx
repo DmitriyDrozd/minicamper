@@ -102,7 +102,11 @@ const theme = createTheme({
         MuiAccordionDetails: {
             styleOverrides: {
                 root: {
+                    padding: '8px 30px 30px',
                     textAlign: 'left',
+                    '@media (max-width: 600px)': {
+                        padding: '8px 15px 15px',
+                    }
                 }
             }
         },

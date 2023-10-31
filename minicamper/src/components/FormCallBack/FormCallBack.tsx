@@ -48,12 +48,13 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
 
     return (
         <FormGroup className={styles.FormCallBack}>
-            <TextField label="Ваше имя" variant="outlined" placeholder="" value={name}
+            <TextField required label="Ваше имя" variant="outlined" placeholder="" value={name}
                        onChange={e => setName(e.target.value)}/>
             <FormControl variant="standard">
                 <InputLabel className={styles.InputLabel} htmlFor="formatted-text-mask-input">Номер
                     телефона</InputLabel>
                 <Input
+                    required
                     value={phone}
                     onChange={e => setPhone(e.target.value)}
                     name="textmask"
@@ -61,9 +62,10 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
                     inputComponent={TextMaskCustom as any}
                 />
             </FormControl>
-            <TextField label="Адрес электронной почты" variant="outlined" placeholder="" value={email}
+            <TextField required label="Адрес электронной почты" variant="outlined" placeholder="" value={email}
                        onChange={e => setEmail(e.target.value)}/>
             <TextareaAutosize
+                required
                 className={styles.Question}
                 minRows={6}
                 placeholder="Введите ваш вопрос"
