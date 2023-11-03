@@ -110,14 +110,14 @@ interface FaqItemProps {
 
 const expandIcon = <ExpandIcon/>;
 const collapseIcon = <CollapseIcon/>;
+const getId = (panel: string) => `${panel}-header`.replaceAll(/[?\s]/g, '');
 
 const FaqItem: FC<FaqItemProps> = ({question, answer, isExpanded, handleChange}) => (
-    <Accordion expanded={isExpanded} onChange={handleChange}>
+    <Accordion expanded={isExpanded} onChange={handleChange} id={getId(question)}>
         <AccordionSummary
             className={styles.TitleWrapper}
             expandIcon={isExpanded ? collapseIcon : expandIcon}
             aria-controls={`${question}-content`}
-            id={`${question}-header`}
         >
             <span className={styles.QuestionTitle}>{question}</span>
         </AccordionSummary>
