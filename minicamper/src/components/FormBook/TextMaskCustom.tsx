@@ -1,24 +1,25 @@
 import * as React from 'react';
-import { IMaskInput } from 'react-imask';
+import InputMask from 'react-input-mask';
 
-interface CustomProps {
-    onChange: (event: { target: { name: string; value: string } }) => void;
-    name: string;
-}
+export const TextMaskCustom = (props: any) => {
+    return (
+        <InputMask
+            {...props}
+            className="MuiInputBase-input MuiOutlinedInput-input css-17cvodc-MuiInputBase-input-MuiOutlinedInput-input"
+            mask="+375 (99) 999-99-99"
+        />
+    );
+};
 
-export const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
-    function TextMaskCustom(props) {
-        const { onChange, ...other } = props;
-        return (
-            <IMaskInput
-                {...other}
-                mask="+375 (00) 000-00-00"
-                definitions={{
-                    '#': /[1-9]/,
-                }}
-                onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
-                overwrite
-            />
-        );
-    },
-);
+export const TextMaskWrapper = React.forwardRef((props: any, ref) => {
+    const { component: Component, ...other } = props;
+
+    React.useImperativeHandle(ref, () => ({
+        focus: () => {
+            // logic to focus the rendered component from 3rd party belongs here
+        },
+        // hiding the value e.g. react-stripe-elements
+    }));
+
+    return <TextMaskCustom {...other} />;
+});

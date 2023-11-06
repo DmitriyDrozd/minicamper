@@ -22,15 +22,18 @@ const theme = createTheme({
         MuiTextField: {
             styleOverrides: {
                 root: {
-                    background,
+                    background: 'transparent',
                     borderRadius,
-                    border: 'none',
+                    border: '1px solid transparent',
                 },
             },
         },
         MuiInputBase: {
             styleOverrides: {
                 root: {
+                    border: '1px solid transparent',
+                    background,
+                    borderRadius,
                     height: '48px',
                 },
             },
@@ -54,9 +57,12 @@ const theme = createTheme({
         },
         MuiOutlinedInput: {
             styleOverrides: {
+                notchedOutline: {
+                    border: '1px solid transparent',
+                },
                 root: {
                     borderRadius,
-                    border: 'none',
+                    border: '1px solid transparent',
                     height: '64px',
                 },
             },
@@ -71,7 +77,7 @@ const theme = createTheme({
         MuiFormControl: {
             styleOverrides: {
                 root: {
-                    background,
+                    background: 'transparent',
                     borderRadius,
                 },
             },

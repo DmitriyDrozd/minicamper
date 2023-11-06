@@ -3,18 +3,15 @@ import {
     FormControlLabel,
 } from '@mui/material';
 import Button from '@mui/material/Button';
-import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
-import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
 import React, {
     FC,
     useState
 } from 'react';
-import { PHONE_MASK } from '../../constants/form';
 import { ButtonStyle } from '../../style/styledButton';
-import { TextMaskCustom } from '../FormBook/TextMaskCustom';
+import { useValidation } from '../../utils/Form';
+import { TextMaskWrapper } from '../FormBook/TextMaskCustom';
 import styles from './FormCallBack.module.sass';
 
 export type TFormCallBackSubmit = {
@@ -28,17 +25,33 @@ interface FormCallBackProps {
     onSubmit: (attributes: TFormCallBackSubmit) => Promise<void>;
 }
 
+/*
+    текст ошибки валидации
+ */
+const helperText = 'Поле не должно быть пустым';
+
 const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('+375');
+    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [question, setQuestion] = useState('');
+    const {
+        errors,
+        hasError,
+        setShowErrors,
+        showErrors,
+    } = useValidation({name, phone, email}); // todo: question validation
 
     const [isPersonalDataAllowed, setIsPersonalDataAllowed] = useState(false);
     const [isMailSent, setIsMailSent] = useState(false);
     const [submitLabel, setSubmitLabel] = useState('Перезвоните мне');
 
     const submitHandler = async () => {
+        if (hasError) {
+            setShowErrors(true);
+            return;
+        }
+
         setIsMailSent(true);
         setSubmitLabel('Вопрос отправлен!');
 
@@ -47,22 +60,38 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
 
     return (
         <FormGroup className={styles.FormCallBack}>
-            <TextField required label="Ваше имя" variant="outlined" placeholder="" value={name}
-                       onChange={e => setName(e.target.value)}/>
-            <FormControl variant="standard">
-                <InputLabel className={styles.InputLabel} htmlFor="formatted-text-mask-input">Номер
-                    телефона</InputLabel>
-                <Input
-                    required
-                    value={phone}
-                    onChange={e => setPhone(e.target.value)}
-                    name="textmask"
-                    placeholder={PHONE_MASK}
-                    inputComponent={TextMaskCustom as any}
-                />
-            </FormControl>
-            <TextField required label="Адрес электронной почты" variant="outlined" placeholder="" value={email}
-                       onChange={e => setEmail(e.target.value)}/>
+            <TextField
+                required
+                label="Ваше имя"
+                variant="outlined"
+                placeholder=""
+                value={name}
+                onChange={e => setName(e.target.value)}
+                error={showErrors && errors.name}
+                helperText={showErrors && errors.name && helperText}
+            />
+            <TextField
+                className={styles.FormItem}
+                label="Номер телефона"
+                variant="outlined"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                error={showErrors && errors.phone}
+                helperText={showErrors && errors.phone && 'Неверный номер телефона'}
+                InputProps={{
+                    inputComponent: TextMaskWrapper,
+                }}
+            />
+            <TextField
+                required
+                label="Адрес электронной почты"
+                variant="outlined"
+                placeholder=""
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                error={showErrors && errors.email}
+                helperText={showErrors && errors.email && helperText}
+            />
             <textarea
                 required
                 className={styles.Question}
@@ -71,7 +100,7 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
             />
             <FormControlLabel control={<Checkbox onChange={(e, checked) => setIsPersonalDataAllowed(checked)}/>}
                               label="Даю согласие на обработку персональных данных *"/>
-            <Button disabled={isMailSent || !isPersonalDataAllowed} className={styles.Action} variant="contained"
+            <Button disabled={isMailSent || !isPersonalDataAllowed || (hasError && showErrors)} className={styles.Action} variant="contained"
                     onClick={submitHandler} sx={ButtonStyle}>{submitLabel}</Button>
         </FormGroup>
     );
