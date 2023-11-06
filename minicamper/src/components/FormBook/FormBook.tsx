@@ -13,6 +13,7 @@ import ru from 'date-fns/locale/ru';
 
 import { ButtonStyle } from '../../style/styledButton';
 import { useValidation } from '../../utils/Form';
+import { BASIC_INPUT_ID } from '../../utils/styling';
 import { TextMaskWrapper } from './TextMaskCustom';
 
 import styles from './FormBook.module.sass';
@@ -68,6 +69,7 @@ const FormBook: FC<FormBookProps> = ({onSubmit}) => {
     return (
         <FormGroup className={classNames(styles.FormBook, styles.FormBookResponsive)} row>
             <TextField
+                id={BASIC_INPUT_ID}
                 className={styles.FormItem}
                 label="Ваше имя"
                 variant="outlined"
