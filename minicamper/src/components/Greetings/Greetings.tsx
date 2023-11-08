@@ -19,7 +19,7 @@ const Greetings: FC<GreetingsProps> = () => {
                 <div className={styles.Greetings}>
                     <img loading='lazy' className={styles.Picture} src={photoPath} alt='кемпер'/>
                     <div className={styles.GreetingsText}>
-                        <div className={styles.Rent}>Аренда автодома для настоящих искателей путешествий</div>
+                        <h1 className={styles.Rent}>Аренда автодома для настоящих искателей путешествий</h1>
                         <div className={styles.Travel}><div className={styles.Description}>Путешествуйте</div><div className={styles.Title}>без границ</div></div>
                     </div>
                 </div>
