@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { UNP } from '../../constants/contacts';
 import { LINKS } from '../../constants/routes';
 import { LogoBigIcon } from '../../icons/LogoBig';
+import { isMobile } from '../../utils/device';
 import { scrollToById } from '../../utils/scroll';
 import Contacts from '../Contacts/Contacts';
 import styles from './Footer.module.sass';
@@ -12,7 +13,9 @@ interface FooterProps {
 const Footer: FC<FooterProps> = () => (
     <div id='contacts' className={styles.Footer}>
         <div className={styles.FooterContent}>
-            <LogoBigIcon className={styles.LogoBig}/>
+            {!isMobile() && (
+                <LogoBigIcon className={styles.LogoBig}/>
+            )}
             <div className={styles.InfoLinks}>
                 <div className={styles.InfoLinkItem}>
                     <h4 className={styles.InfoLinkTitle}>Аренда кемпера в Минске</h4>
