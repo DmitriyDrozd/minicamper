@@ -1,5 +1,5 @@
 export const ROUTER = {
-    politcnda: '/politcnda',
+    politcnda: '/politicnda',
     landing: '*',
 }
 
