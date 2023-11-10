@@ -1,6 +1,5 @@
 import React, {
     FC,
-    memo,
     useEffect
 } from 'react';
 import {
