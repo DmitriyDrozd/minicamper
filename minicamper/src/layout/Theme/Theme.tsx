@@ -138,6 +138,13 @@ const theme = createTheme({
                 }
             }
         },
+        MuiInputLabel: {
+            styleOverrides: {
+                root: {
+                    lineHeight: '2rem',
+                }
+            }
+        }
     },
 });
 
