@@ -9,6 +9,8 @@ import React, {
     FC,
     useState
 } from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTER } from '../../constants/routes';
 import { ButtonStyle } from '../../style/styledButton';
 import { useValidation } from '../../utils/Form';
 import { TextMaskWrapper } from '../FormBook/TextMaskCustom';
@@ -98,8 +100,10 @@ const FormCallBack: FC<FormCallBackProps> = ({onSubmit}) => {
                 placeholder="Введите ваш вопрос"
                 onChange={e => setQuestion(e.target.value)}
             />
-            <FormControlLabel control={<Checkbox onChange={(e, checked) => setIsPersonalDataAllowed(checked)}/>}
-                              label="Даю согласие на обработку персональных данных *"/>
+            <FormControlLabel
+                control={<Checkbox onChange={(e, checked) => setIsPersonalDataAllowed(checked)}/>}
+                label={<span>Даю согласие на <Link to={ROUTER.politcnda}>обработку персональных данных</Link> *</span>}
+            />
             <Button disabled={isMailSent || !isPersonalDataAllowed || (hasError && showErrors)} className={styles.Action} variant="contained"
                     onClick={submitHandler} sx={ButtonStyle}>{submitLabel}</Button>
         </FormGroup>

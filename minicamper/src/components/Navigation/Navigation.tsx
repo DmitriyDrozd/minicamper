@@ -14,6 +14,10 @@ import {
 import Button from '@mui/material/Button';
 import React, { FC } from 'react';
 import {
+    useLocation,
+    useNavigate
+} from 'react-router-dom';
+import {
     PHONE,
     PHONE_RAW
 } from '../../constants/contacts';
@@ -35,12 +39,23 @@ interface INavigation {
 const Navigation: FC<INavigation> = () => {
     const navLinks = LINKS;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { pathname} = location;
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
     const Phone = <a className={styles.Number} href="tel:+375447007655">{PHONE}</ a>;
+
+    const handleNavItemClick = (route: string) => {
+        if (pathname !== '/') {
+            return () => { navigate(`/`, { state: { hash: route } }) }
+        }
+
+        return scrollToById(route);
+    }
 
     const mobileMenu = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', justifyContent: 'space-between' }} className={styles.SideBar}>
@@ -49,7 +64,7 @@ const Navigation: FC<INavigation> = () => {
             <List>
                 {navLinks.map((item) => (
                     <ListItem key={item.title} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }} onClick={scrollToById(item.url)}>
+                        <ListItemButton sx={{ textAlign: 'center' }} onClick={handleNavItemClick(item.url)}>
                             <ListItemText primary={item.title} />
                         </ListItemButton>
                     </ListItem>
@@ -86,10 +101,10 @@ const Navigation: FC<INavigation> = () => {
                             </IconButton>
 
                             <Box sx={{ display: { xs: 'none', lg: 'flex' }, 'justifyContent': 'space-between', 'width': '100%' }}>
-                                <div className={styles.Clickable} onClick={scrollToById('header')}><LogoIcon /></div>
+                                <div className={styles.Clickable} onClick={handleNavItemClick('header')}><LogoIcon /></div>
                                 <div className={styles.NavLink}>
                                     {navLinks.map((link) => (
-                                        <Button key={link.title} sx={{ color: '#000', textTransform: 'none', fontSize: '16px' }} onClick={scrollToById(link.url)}>
+                                        <Button key={link.title} sx={{ color: '#000', textTransform: 'none', fontSize: '16px' }} onClick={handleNavItemClick(link.url)}>
                                             {link.title}
                                         </Button>
                                     ))}

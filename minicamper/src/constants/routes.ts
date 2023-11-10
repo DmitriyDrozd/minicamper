@@ -1,3 +1,8 @@
+export const ROUTER = {
+    politcnda: '/politcnda',
+    landing: '*',
+}
+
 export const ROUTE = {
     about: 'about',
     terms: 'terms',
