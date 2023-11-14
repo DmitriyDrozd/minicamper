@@ -5,12 +5,14 @@ import { RoadIcon } from '../../icons/Road';
 import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { isMobile } from '../../utils/device';
 import styles from './Gallery.module.sass';
 
 interface GalleryProps {
 }
 
-const path = 'gallery/';
+const PATH = 'gallery/';
+const PATH_MOBILE = 'gallery-mobile/';
 const images = [
     '1.jpg',
     '2.jpg',
@@ -24,6 +26,8 @@ const images = [
 ];
 
 const Gallery: FC<GalleryProps> = () => {
+    const path = isMobile() ? PATH_MOBILE : PATH;
+
     return (
         <div id="gallery" className={styles.GalleryWrapper}>
             <div className={styles.Background}>
