@@ -15,19 +15,18 @@
 
 .Gallery
   padding-bottom: $section-padding
-  width: 100%
 
   @include media-mobile
     padding-bottom: $section-padding-mobile
 
   .Title
     text-align: left
+    padding-bottom: 40px
 
   .Carousel
-    min-height: 400px
-    margin: 40px 0
+    .Slide
+      max-height: 80vh
 
     .GalleryItem
       width: 100%
       height: auto
-      border-radius: $border-radius

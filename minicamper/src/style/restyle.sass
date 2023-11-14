@@ -1,0 +1,21 @@
+@import 'colors'
+@import 'layout'
+
+// react-responsive-carousel
+.carousel
+  &.carousel-slider
+    .control-arrow
+      &:before
+        margin: 0 15px
+
+  .slider-wrapper,
+  .thumb
+    border-radius: $border-radius
+
+  .thumbs-wrapper
+    margin: 20px 0
+
+  .thumb
+    &.selected,
+    &:hover
+      border-color: $border-color

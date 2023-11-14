@@ -1,13 +1,14 @@
-import React, {
-    FC,
-    useState
-} from 'react';
-import Carousel from 'react-material-ui-carousel';
+import React, { FC } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+
 import { RoadIcon } from '../../icons/Road';
 import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styles from './Gallery.module.sass';
 
-interface GalleryProps {}
+interface GalleryProps {
+}
 
 const path = 'gallery/';
 const images = [
@@ -23,39 +24,26 @@ const images = [
 ];
 
 const Gallery: FC<GalleryProps> = () => {
-    const [isImgLoaded, setIsImgLoaded] = useState(false);
-
     return (
-        <div id='gallery' className={styles.GalleryWrapper}>
+        <div id="gallery" className={styles.GalleryWrapper}>
             <div className={styles.Background}>
                 <RoadIcon/>
             </div>
             <ContentWrapper>
                 <div className={styles.Gallery}>
                     <h2 className={styles.Title}>Галерея</h2>
-                    {
-                        !isImgLoaded ? (
-                            <img src={path + images[0]} alt={'загрузка фото'} onLoad={() => setIsImgLoaded(true)} />
-                        ) : (
-                            <Carousel
-                                autoPlay
-                                stopAutoPlayOnHover
-                                swipe
-                                navButtonsAlwaysVisible
-                                cycleNavigation
-                                indicators
-                                index={0}
-                                animation={'slide'}
-                                className={styles.Carousel}
-                            >
-                                {images.map( (name, i) => <img loading='lazy' className={styles.GalleryItem} key={i} src={path + name} alt="фото кемпера" /> )}
-                            </Carousel>
-                        )
-                    }
+                    <Carousel className={styles.Carousel} stopOnHover showStatus={false}>
+                        {images.map((name, i) => (
+                            <div key={name} className={styles.Slide}>
+                                <img src={path + name} loading="lazy" alt="фото кемпера"
+                                     className={styles.GalleryItem}/>
+                            </div>
+                        ))}
+                    </Carousel>
                 </div>
             </ContentWrapper>
         </div>
     );
-}
+};
 
 export default Gallery;
