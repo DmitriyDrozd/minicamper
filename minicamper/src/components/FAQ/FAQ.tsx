@@ -1,9 +1,8 @@
-import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
-} from '@mui/material';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
 import React, { FC } from 'react';
+
 import { CollapseIcon } from '../../icons/Collapse';
 import { ExpandIcon } from '../../icons/Expand';
 import { QuestionIcon } from '../../icons/Question';

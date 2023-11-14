@@ -1,7 +1,5 @@
-import {
-    createTheme,
-    ThemeProvider
-} from '@mui/material';
+import createTheme from '@mui/material/styles/createTheme';
+import ThemeProvider from '@mui/material/styles/ThemeProvider'
 import React, { FC } from 'react';
 interface ThemeProps {
     children: React.ReactElement
