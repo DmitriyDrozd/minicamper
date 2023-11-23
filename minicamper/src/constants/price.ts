@@ -18,7 +18,8 @@ export const MIN_DRIVING_EXPERIENCE = 3;
 /**
  * Стоимость за сутки
  */
-export const DAILY_PRICE = 100
+export const DAILY_PRICE = 100;
+export const DAILY_PRICE_DISCOUNT = 70;
 /**
  * Стоимость за километр
  */
