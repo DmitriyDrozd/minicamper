@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { ROUTE } from '../../constants/routes';
 import { CampervanIcon } from '../../icons/Campervan';
 import { DriversLicenseIcon } from '../../icons/DriversLicense';
 import { HomeIcon } from '../../icons/Home';
@@ -39,7 +40,7 @@ const advantages = [
 ];
 
 const Advantages: FC<AdvantagesProps> = () => (
-    <section id='about' className={styles.Advantages}>
+    <section id={ROUTE.about} className={styles.Advantages}>
         <h2 className={styles.Title}>Преимущества путешествовать с нами</h2>
         <div className={styles.AdvantagesList}>{advantages.map(({title, description, icon}) => (
             <div className={styles.Advantage} key={title}>

@@ -2,6 +2,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import React, { FC } from 'react';
+import { ROUTE } from '../../constants/routes';
 
 import { CollapseIcon } from '../../icons/Collapse';
 import { ExpandIcon } from '../../icons/Expand';
@@ -134,7 +135,7 @@ const Faq: FC<FaqProps> = () => {
         };
 
     return (
-        <div id='faq' className={styles.Faq}>
+        <div id={ROUTE.faq} className={styles.Faq}>
             <div className={styles.Title}>
                 <div className={styles.StickyTitle}>
                     <h2>Часто задаваемые вопросы</h2>

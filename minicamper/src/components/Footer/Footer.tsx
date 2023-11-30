@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import { UNP } from '../../constants/contacts';
-import { LINKS } from '../../constants/routes';
+import {
+    LINKS,
+    ROUTE
+} from '../../constants/routes';
 import { LogoBigIcon } from '../../icons/LogoBig';
 import { isMobile } from '../../utils/device';
 import { scrollToById } from '../../utils/scroll';
@@ -11,7 +14,7 @@ interface FooterProps {
 }
 
 const Footer: FC<FooterProps> = () => (
-    <div id='contacts' className={styles.Footer}>
+    <div id={ROUTE.contacts} className={styles.Footer}>
         <div className={styles.FooterContent}>
             {!isMobile() && (
                 <LogoBigIcon className={styles.LogoBig}/>

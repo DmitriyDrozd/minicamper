@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Carousel } from 'react-responsive-carousel';
+import { ROUTE } from '../../constants/routes';
 
 import { RoadIcon } from '../../icons/Road';
 import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
@@ -29,7 +30,7 @@ const Gallery: FC<GalleryProps> = () => {
     const path = isMobile() ? PATH_MOBILE : PATH;
 
     return (
-        <div id="gallery" className={styles.GalleryWrapper}>
+        <div id={ROUTE.gallery} className={styles.GalleryWrapper}>
             <div className={styles.Background}>
                 <RoadIcon/>
             </div>

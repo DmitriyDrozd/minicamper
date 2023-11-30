@@ -10,6 +10,7 @@ import {
     PLEDGE,
     SERVICE_FEE
 } from '../../constants/price';
+import { ROUTE } from '../../constants/routes';
 import { CheckIcon } from '../../icons/Check';
 import { ButtonStyle } from '../../style/styledButton';
 import { isMobile } from '../../utils/device';
@@ -43,7 +44,7 @@ const Terms: FC<TermsProps> = () => {
     const onClick = () => window.document.querySelector('body')?.scrollTo({top: 0, behavior: 'smooth'});
 
     return (
-        <section id="terms" className={styles.Terms}>
+        <section id={ROUTE.terms} className={styles.Terms}>
             <div className={styles.Info}>
                 <h2 className={styles.Title}>Условия аренды кемпера</h2>
                 <div className={styles.TermsList}>{terms.map(({title, description}, index) => (

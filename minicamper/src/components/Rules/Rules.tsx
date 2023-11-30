@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { ROUTE } from '../../constants/routes';
 import { isMobile } from '../../utils/device';
 import styles from './Rules.module.sass';
 
@@ -33,7 +34,7 @@ const rules = [
 ];
 //fixme: ListItem constant width
 const Rules: FC<RulesProps> = () => (
-    <div id="rules" className={styles.Rules}>
+    <div id={ROUTE.rules} className={styles.Rules}>
         <div className={styles.Title}>
             <h2 className={styles.StickyTitle}>Правила аренды кемпера</h2>
         </div>
