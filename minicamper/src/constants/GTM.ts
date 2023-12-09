@@ -1,0 +1,1 @@
+export const gtmId = 'GTM-WJ7V8DVD';

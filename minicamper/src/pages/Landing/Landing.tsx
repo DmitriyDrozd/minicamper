@@ -21,6 +21,7 @@ import {
     sendBook,
     sendFeedback
 } from '../../service/mailService';
+import { GoogleTagManager } from '../../utils/GoogleTagManager';
 import {
     getBookHtml,
     getFeedbackHtml
@@ -43,11 +44,13 @@ const Landing: FC<LandingProps> = () => {
 
     const submitClientCredentials = async (credentials: TFormBookSubmitCredentials): Promise<void> => {
         const html = getBookHtml(credentials);
+        GoogleTagManager.logBookEvent();
         await sendBook(html);
     };
 
     const submitCallback = async (attributes: TFormCallBackSubmit): Promise<void> => {
         const html = getFeedbackHtml(attributes);
+        GoogleTagManager.logCallbackEvent();
         await sendFeedback(html);
     };
 

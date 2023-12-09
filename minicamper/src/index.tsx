@@ -1,4 +1,3 @@
-import { YMaps } from '@pbe/react-yandex-maps';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
@@ -13,7 +12,11 @@ import Theme from './layout/Theme/Theme';
 import reportWebVitals from './reportWebVitals';
 import Landing from './pages/Landing/Landing';
 import Politcnda from './pages/Politcnda/Politcnda';
+import { GoogleTagManager } from './utils/GoogleTagManager';
+
 import './style/index.sass';
+
+GoogleTagManager.initialize();
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,

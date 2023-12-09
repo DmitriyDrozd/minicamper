@@ -2398,6 +2398,11 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-gtm-module@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/@types/react-gtm-module/-/react-gtm-module-2.0.3.tgz"
+  integrity sha512-fL2zKdDFN5LckSsVBXEhhm9M4tFTM9oHJfGcfZJzktQkzpOTGtDM8oXIP9d9UBDxO4xLNZhS22dlgRVv6wgK9w==
+
 "@types/react-input-mask@^3.0.4":
   version "3.0.4"
   resolved "https://registry.npmjs.org/@types/react-input-mask/-/react-input-mask-3.0.4.tgz"
@@ -8393,6 +8398,11 @@ react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
+
+react-gtm-module@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.npmjs.org/react-gtm-module/-/react-gtm-module-2.0.11.tgz"
+  integrity sha512-8gyj4TTxeP7eEyc2QKawEuQoAZdjKvMY4pgWfycGmqGByhs17fR+zEBs0JUDq4US/l+vbTl+6zvUIx27iDo/Vw==
 
 react-input-mask@^2.0.4:
   version "2.0.4"
