@@ -12,6 +12,7 @@ import Theme from './layout/Theme/Theme';
 import reportWebVitals from './reportWebVitals';
 import Landing from './pages/Landing/Landing';
 import Politcnda from './pages/Politcnda/Politcnda';
+import { ApplicationContextProvider } from './store/applicationContext';
 import { GoogleTagManager } from './utils/GoogleTagManager';
 
 import './style/index.sass';
@@ -25,14 +26,16 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <Theme>
-            <Router>
-                <PageWrapper>
-                    <Routes>
-                        <Route path={ROUTER.politcnda} element={<Politcnda/>}/>
-                        <Route path={ROUTER.landing} element={<Landing/>}/>
-                    </Routes>
-                </PageWrapper>
-            </Router>
+            <ApplicationContextProvider>
+                <Router>
+                    <PageWrapper>
+                        <Routes>
+                            <Route path={ROUTER.politcnda} element={<Politcnda/>}/>
+                            <Route path={ROUTER.landing} element={<Landing/>}/>
+                        </Routes>
+                    </PageWrapper>
+                </Router>
+            </ApplicationContextProvider>
         </Theme>
     </React.StrictMode>,
 );

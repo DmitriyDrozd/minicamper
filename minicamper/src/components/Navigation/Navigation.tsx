@@ -16,16 +16,13 @@ import {
     useNavigate
 } from 'react-router-dom';
 import {
-    PHONE,
-    PHONE_RAW
-} from '../../constants/contacts';
-import {
     LINKS,
 } from '../../constants/routes';
 import { InstagramIcon } from '../../icons/Instagram';
 import { LogoIcon } from '../../icons/Logo';
 import { MenuIcon } from '../../icons/Menu';
 import { ViberIcon } from '../../icons/Viber';
+import { useApplicationContext } from '../../store/applicationContext';
 import { scrollToById } from '../../utils/scroll';
 import styles from './Navigation.module.sass';
 
@@ -40,12 +37,13 @@ const Navigation: FC<INavigation> = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const {pathname} = location;
+    const { contacts: { phone, phoneRaw } } = useApplicationContext();
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
     };
 
-    const Phone = <a className={styles.Number} href="tel:+375447007655">{PHONE}</ a>;
+    const PhoneElement = <a className={styles.Number} href={`tel:+${phoneRaw}`}>{phone}</ a>;
 
     const handleNavItemClick = (route: string) => {
         if (pathname !== '/') {
@@ -73,11 +71,11 @@ const Navigation: FC<INavigation> = () => {
             </List>
             <Divider/>
             <div className={styles.SideBarContacts}>
-                {Phone}
+                {PhoneElement}
                 <div className={styles.Messengers}>
                     <a target="_blank" rel="noreferrer"
                        href="https://instagram.com/camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA=="><InstagramIcon/></a>
-                    <a href={`viber://chat?number=%2B${PHONE_RAW}`}><ViberIcon/></a>
+                    <a href={`viber://chat?number=%2B${phoneRaw}`}><ViberIcon/></a>
                 </div>
             </div>
         </Box>
@@ -124,7 +122,7 @@ const Navigation: FC<INavigation> = () => {
                                     ))}
                                 </div>
                                 <div className={styles.Phone}>
-                                    {Phone}
+                                    {PhoneElement}
                                 </div>
                             </Box>
                         </Toolbar>

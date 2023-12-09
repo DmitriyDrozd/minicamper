@@ -8,16 +8,15 @@ import {
     Placemark,
     YMaps
 } from '@pbe/react-yandex-maps';
-import { ADDRESS_COORDINATES } from '../../constants/contacts';
-
-const center = ADDRESS_COORDINATES;
-const addressMarkerCenter = ADDRESS_COORDINATES;
+import { useApplicationContext } from '../../store/applicationContext';
 
 interface MapProps {
 }
 
 //todo: zoom issue
 const MapComponent: FC<MapProps> = () => {
+    const { contacts: { addressCoordinates } } = useApplicationContext();
+
     return (
         <YMaps
             query={{
@@ -26,7 +25,7 @@ const MapComponent: FC<MapProps> = () => {
                 load: "Map,Placemark,control.FullscreenControl,control.GeolocationControl,control.TypeSelector,control.ZoomControl",
             }}
         >
-            <Map defaultState={{center, zoom: 16}} width="100%" height="100%" controls={[
+            <Map defaultState={{center: addressCoordinates, zoom: 16}} width="100%" height="100%" controls={[
                 'FullscreenControl',
                 'GeolocationControl',
                 'TypeSelector',
@@ -36,7 +35,7 @@ const MapComponent: FC<MapProps> = () => {
                 <GeolocationControl/>
                 <TypeSelector/>
                 <ZoomControl/>
-                <Placemark geometry={addressMarkerCenter}/>
+                <Placemark geometry={addressCoordinates}/>
             </Map>
         </YMaps>
     );

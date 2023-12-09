@@ -25,3 +25,14 @@ export const DAILY_PRICE_DISCOUNT = 70;
  */
 export const KM_PRICE = 1
 export const MAX_DISTANCE = 100
+
+export type TPrice = {
+    serviceFee: number,
+    pledge: number,
+    minTerm: number,
+    minDrivingExperience: number,
+    dailyPrice: number,
+    dailyPriceDiscount?: number,
+    kmPrice: number,
+    maxDistance: number,
+}

@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import styles from './PageWrapper.module.sass';
 
 interface PageWrapperProps {
-    children: string | JSX.Element | JSX.Element[];
+    children: string | React.ReactNode;
 }
 
 const PageWrapper: FC<PageWrapperProps> = ({children}) => (
