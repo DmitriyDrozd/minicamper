@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var mailRouter = require('./routes/mail');
 var pagesRouter = require('./routes/pages');
+var CMSRouter = require('./routes/CMS');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(mailRouter);
 app.use(pagesRouter);
+app.use(CMSRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -35,10 +35,10 @@ router.post('/mailer/book', function (req, res) {
     transporter.sendMail(mailData, function (err, info) {
         if (err) {
             console.log(err)
-            res.send(500);
+            res.sendStatus(500);
         } else {
             console.log(info);
-            res.send(200);
+            res.sendStatus(200);
         }
     });
 });
@@ -57,10 +57,10 @@ router.post('/mailer/feedback', function (req, res) {
     transporter.sendMail(mailData, function (err, info) {
         if (err) {
             console.log(err)
-            res.send(500);
+            res.sendStatus(500);
         } else {
             console.log(info);
-            res.send(200);
+            res.sendStatus(200);
         }
     });
 });
