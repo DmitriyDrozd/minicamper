@@ -33,7 +33,7 @@ const images = [
 
 const Gallery: FC<GalleryProps> = () => {
     const path = isMobile() ? PATH_MOBILE : PATH;
-    const [fullScreenImage, setFullScreenImage] = useState<React.ReactNode>(null);
+    const [fullScreenImage, setFullScreenImage] = useState<number | null>(null);
     const handleCloseFullScreen = () => {
         setFullScreenImage(null);
     }
@@ -47,16 +47,17 @@ const Gallery: FC<GalleryProps> = () => {
                 <>
                     <Modal
                         className={styles.GalleryModal}
-                        open={!!fullScreenImage}
+                        open={fullScreenImage !== null}
                         onClose={handleCloseFullScreen}
                     >
                         <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }} onClick={handleCloseFullScreen}>
-                            {fullScreenImage}
+                            <img src={PATH + images[fullScreenImage as number]} loading="lazy" alt="фото кемпера"
+                                 className={styles.GalleryItem}/>
                         </Box>
                     </Modal>
                     <div className={styles.Gallery}>
                         <h2 className={styles.Title}>Галерея</h2>
-                        <Carousel className={styles.Carousel} stopOnHover showStatus={false} onClickItem={(index, item) => setFullScreenImage(item)}>
+                        <Carousel className={styles.Carousel} stopOnHover showStatus={false} onClickItem={(index) => setFullScreenImage(index)}>
                             {images.map((name) => (
                                 <div key={name} className={styles.Slide}>
                                     <img src={path + name} loading="lazy" alt="фото кемпера"

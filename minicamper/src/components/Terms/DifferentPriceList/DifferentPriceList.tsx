@@ -22,7 +22,7 @@ const DifferentPriceList: FC<DifferentPriceListProps> = ({priceList, handleActio
                             <span className={styles.DiscountOld}>{value}</span> <span
                             className={styles.DiscountNew}>{discount}</span>
                         </>
-                    ) : (<span>{value} руб./сутки</span>)
+                    ) : `${value} руб./сутки`
                     }
                 </div>
             </div>
