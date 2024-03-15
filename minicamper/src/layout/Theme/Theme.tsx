@@ -13,7 +13,7 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    fontFamily: '"Exo 2", sans-serif'
+                    fontFamily: '"Roboto Flex", sans-serif'
                 }
             }
         },

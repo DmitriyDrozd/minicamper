@@ -1,1 +1,12 @@
-{"address":"г. Минск, д. Большой Тростенец, ул. Луговая 6А","addressCoordinates":[53.848834,27.707675],"phone":"+375 (44) 700-76-55","phoneRaw":"37544700765","email":"admin@minicamper.by","instagramAccount":"camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA==","unp":"193645131"}
+{
+  "address": "г. Минск, д. Большой Тростенец, ул. Луговая 6А",
+  "addressCoordinates": [
+    53.848834,
+    27.707675
+  ],
+  "phone": "+375 (44) 700-76-55",
+  "phoneRaw": "37544700765",
+  "email": "admin@minicamper.by",
+  "instagramAccount": "camper_arenda_by?utm_source=qr&igshid=YzU1NGVlODEzOA==",
+  "unp": "193645131"
+}

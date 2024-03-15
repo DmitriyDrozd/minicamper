@@ -1,10 +1,9 @@
-import Button from '@mui/material/Button';
 import React, { FC } from 'react';
 import { ROUTE } from '../../constants/routes';
 import { CheckIcon } from '../../icons/Check';
 import { useApplicationContext } from '../../store/applicationContext';
-import { ButtonStyle } from '../../style/styledButton';
 import { isMobile } from '../../utils/device';
+import DifferentPriceList from './DifferentPriceList/DifferentPriceList';
 import styles from './Terms.module.sass';
 
 interface TermsProps {
@@ -18,10 +17,9 @@ const Terms: FC<TermsProps> = () => {
         minTerm,
         maxDistance,
         kmPrice,
-        dailyPrice,
-        dailyPriceDiscount,
+        differentPrice,
     } } = useApplicationContext();
-    const onClick = () => window.document.querySelector('body')?.scrollTo({top: 0, behavior: 'smooth'});
+    const handleChooseDate = () => window.document.querySelector('body')?.scrollTo({top: 0, behavior: 'smooth'});
 
     const terms = [
         {
@@ -54,22 +52,11 @@ const Terms: FC<TermsProps> = () => {
                         {description && <div className={styles.TermDescription}>{description}</div>}
                     </div>
                 ))}</div>
-                <div className={styles.Prices}>
-                    <div className={styles.PriceItem}>
-                        <div className={styles.Price}><span className={styles.DiscountOld}>{dailyPrice}</span> <span
-                            className={styles.DiscountNew}>{dailyPriceDiscount}</span> руб./сутки
-                        </div>
-                        Менее {minTerm}-х суток оговаривается отдельно
-                    </div>
-                    <div className={styles.PriceItem}>
-                        <Button variant="contained" onClick={onClick} sx={ButtonStyle} className={styles.Action}>Узнать
-                            о наличии</Button>
-                    </div>
-                </div>
+                <DifferentPriceList priceList={differentPrice} handleActionClick={handleChooseDate}/>
             </div>
             {!isMobile() && (
                 <div className={styles.Picture}>
-                    <img loading="lazy" src="terms-picture.jpg" alt="песик в кемпере"/>
+                    <img loading="lazy" src="terms-picture.jpg" alt="условия аренды"/>
                 </div>
             )}
         </section>

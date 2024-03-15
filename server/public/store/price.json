@@ -1,1 +1,30 @@
-{"serviceFee":40,"pledge":300,"minTerm":3,"minDrivingExperience":3,"dailyPrice":100,"dailyPriceDiscount":70,"kmPrice":1,"maxDistance":100}
+{
+  "serviceFee": 40,
+  "pledge": 300,
+  "minTerm": 3,
+  "minDrivingExperience": 3,
+  "differentPrice": [
+    {
+      "title": "1-3 дня",
+      "value": 100
+    },
+    {
+      "title": "3-7 дней",
+      "value": 90
+    },
+    {
+      "title": "7-14 дней",
+      "value": 80
+    },
+    {
+      "title": "14-30 дней",
+      "value": 70
+    },
+    {
+      "title": "30 дней и более",
+      "value": 60
+    }
+  ],
+  "kmPrice": 1,
+  "maxDistance": 100
+}

@@ -1,0 +1,58 @@
+@import "../../../style/colors"
+@import "../../../style/mixins"
+@import "../../../style/layout"
+
+.PriceList
+  display: flex
+  gap: 12px
+
+  flex-direction: column
+
+  .PriceTable
+    border-radius: $border-radius
+    border: 2px solid $border-color
+
+  .PriceItem
+    flex-grow: 0
+    font-size: 18px
+    font-style: normal
+    font-weight: 300
+    line-height: normal
+
+    &:nth-child(2n)
+      &:not(:last-child)
+        background: #f9e8d7
+
+  .Action
+    @include media-mobile
+    width: 100%
+
+  .Price
+    padding: 21px 20px
+    text-wrap: nowrap
+    font-weight: 500
+    text-align: center
+    display: flex
+    justify-content: space-evenly
+
+    .Title
+      flex-basis: 50%
+
+    .Value
+      width: 126px
+
+    .Divider
+      display: block
+      flex-basis: 1px
+      height: 22px
+      background: $border-color
+
+      @include media-mobile
+        display: none
+
+  .DiscountOld
+    color: $primary-text-color-fade
+    text-decoration: line-through
+
+  .DiscountNew
+    font-weight: bold

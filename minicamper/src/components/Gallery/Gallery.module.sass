@@ -13,6 +13,16 @@
     @include media-mobile
       top: 50%
 
+.GalleryModal
+  &:hover
+    cursor: pointer
+
+  .Slide
+    max-width: 100%
+
+  .GalleryItem
+    width: 100%
+
 .Gallery
   padding-bottom: $section-padding
 
@@ -27,6 +37,9 @@
     .Slide
       max-height: 80vh
       overflow: auto
+
+      &:hover
+        cursor: pointer
 
     .GalleryItem
       width: 100%
