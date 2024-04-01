@@ -6,9 +6,10 @@ const port = process.env.EMAIL_PORT;
 const host = process.env.EMAIL_HOST;
 const user = process.env.EMAIL_ADDRESS;
 const pass = process.env.EMAIL_PASSWORD;
+const receiver = process.env.EMAIL_DESTINATION;
 
 const from = user;
-const to = user;
+const to = receiver;
 
 const transporter = nodemailer.createTransport({
     port,
