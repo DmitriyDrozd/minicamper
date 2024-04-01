@@ -2,6 +2,7 @@ import Button from '@mui/material/Button';
 import React, { FC } from 'react';
 import { TDifferentPriceItem } from '../../../constants/price';
 import { ButtonStyle } from '../../../style/styledButton';
+import { isMobile as getIsMobile } from '../../../utils/device';
 
 import styles from './DifferentPriceList.module.sass';
 
@@ -10,7 +11,10 @@ interface DifferentPriceListProps {
     priceList: TDifferentPriceItem[];
 }
 
+const ACTION_LABEL = 'Узнать о наличии';
+
 const DifferentPriceList: FC<DifferentPriceListProps> = ({priceList, handleActionClick}) => {
+    const isMobile = getIsMobile();
     const priceItems = priceList.map(({title, value, discount}) => (
         <div className={styles.PriceItem} key={title}>
             <div className={styles.Price}>
@@ -34,10 +38,11 @@ const DifferentPriceList: FC<DifferentPriceListProps> = ({priceList, handleActio
             <div className={styles.PriceTable}>
                 {priceItems}
             </div>
-            <div className={styles.PriceItem}>
-                <Button variant="contained" onClick={handleActionClick} sx={ButtonStyle} className={styles.Action}>Узнать
-                    о наличии</Button>
-            </div>
+            {!isMobile && (
+                <div className={styles.PriceItem}>
+                    <Button variant="contained" onClick={handleActionClick} sx={ButtonStyle} className={styles.Action}>{ACTION_LABEL}</Button>
+                </div>
+            )}
         </div>
     );
 };

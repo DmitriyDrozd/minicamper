@@ -27,12 +27,14 @@ import {
     getFeedbackHtml
 } from '../../utils/mail';
 import { scrollToById } from '../../utils/scroll';
+import { isMobile as getIsMobile } from '../../utils/device';
 
 interface LandingProps {
 }
 
 const Landing: FC<LandingProps> = () => {
     const location = useLocation();
+    const isMobile = getIsMobile();
 
     useEffect(() => {
         const hash = location.state?.hash;
@@ -56,14 +58,19 @@ const Landing: FC<LandingProps> = () => {
 
     return (
         <>
-            <ContentWrapper>
-                <FormBook onSubmit={submitClientCredentials}/>
-            </ContentWrapper>
+            {!isMobile && (
+                <ContentWrapper>
+                    <FormBook onSubmit={submitClientCredentials}/>
+                </ContentWrapper>
+            )}
             <Greetings/>
             <ContentWrapper>
                 <>
                     <Advantages/>
                     <Terms/>
+                    {isMobile && (
+                        <FormBook onSubmit={submitClientCredentials}/>
+                    )}
                 </>
             </ContentWrapper>
             <Quote/>
