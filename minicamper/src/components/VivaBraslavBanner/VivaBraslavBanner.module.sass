@@ -1,0 +1,121 @@
+@import "../../style/layout"
+@import "../../style/mixins"
+
+.VivaModal
+  position: relative
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .VivaBraslavBanner
+    border-radius: $border-radius-xl
+    background: #FFF
+    position: relative
+    width: 600px
+    height: 600px
+    overflow: hidden
+
+    &:focus
+      outline: none
+
+    @include media-mobile
+      border-radius: $border-radius
+      width: 280px
+      height: 280px
+
+    .VivaBackground,
+    .VivaBackgroundOverlay
+      z-index: 0
+      position: absolute
+      top: 0
+      left: 0
+
+    .VivaBackgroundOverlay
+      color: #FFC700
+
+    .VivaBackgroundOverlay
+      &:nth-child(2n)
+        transform: scale(103%)
+        top: 6px
+        left: 6px
+        color: #EFBB00
+
+        @include media-mobile
+          transform: scale(104%)
+          top: 2px
+          left: 4px
+
+    .vivaBraslavContent
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      z-index: 1
+      padding: 10px
+      height: 100%
+      position: relative
+      font-family: "Exo 2"
+
+    .VivaLogo
+      width: 356px
+      padding-top: 52px
+
+      @include media-mobile
+        width: 166px
+        padding-top: 10px
+
+    .VivaTerm
+      text-transform: uppercase
+      font-size: 40px
+      line-height: 36px
+      font-weight: 900
+      word-spacing: 100vw
+      text-align: center
+      padding-top: 10px
+      padding-bottom: 55px
+
+      @include media-mobile
+        font-size: 20px
+        line-height: 18px
+        padding-top: 10px
+        padding-bottom: 16px
+
+    .VivaLabel
+      text-transform: uppercase
+      font-size: 30px
+      line-height: 36px
+      font-weight: 400
+      text-align: center
+      padding: 0 36px
+
+      @include media-mobile
+        font-size: 15px
+        line-height: 18px
+        padding: 0 8px
+
+      .VivaLabelAccent
+        font-weight: 700
+        font-style: italic
+
+    .close
+      color: #7F7F7F
+      position: absolute
+      top: 10px
+      right: 0
+      width: 36px
+
+      @include media-mobile
+        top: 6px
+        right: -10px
+
+      .cloeIcon svg
+        width: 36px
+        height: 36px
+
+        @include media-mobile
+          width: 18px
+          height: 18px
+
+      &:hover
+        color: #696969

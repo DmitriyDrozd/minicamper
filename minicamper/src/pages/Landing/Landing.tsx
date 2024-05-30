@@ -16,6 +16,7 @@ import Quote from '../../components/Quote/Quote';
 import Rules from '../../components/Rules/Rules';
 import StayInTouch from '../../components/StayInTouch/StayInTouch';
 import Terms from '../../components/Terms/Terms';
+import VivaBraslavBanner from '../../components/VivaBraslavBanner/VivaBraslavBanner';
 import ContentWrapper from '../../layout/ContentWrapper/ContentWrapper';
 import {
     sendBook,
@@ -31,6 +32,8 @@ import { isMobile as getIsMobile } from '../../utils/device';
 
 interface LandingProps {
 }
+
+const VIVA_BRASLAV_END_DATE = Date.parse('28 Jul 2024');
 
 const Landing: FC<LandingProps> = () => {
     const location = useLocation();
@@ -56,8 +59,15 @@ const Landing: FC<LandingProps> = () => {
         await sendFeedback(html);
     };
 
+    const isVivaBannerActive = Date.now() < VIVA_BRASLAV_END_DATE;
+
     return (
         <>
+            {
+                isVivaBannerActive && (
+                    <VivaBraslavBanner />
+                )
+            }
             {!isMobile && (
                 <ContentWrapper>
                     <FormBook onSubmit={submitClientCredentials}/>
