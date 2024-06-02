@@ -27,19 +27,19 @@ export const DIFFERENT_PRICE = [
         value: 70,
     },
     {
-        title: '3-7 дней',
+        title: '4-7 дней',
         value: 60,
     },
     {
-        title: '7-14 дней',
+        title: '8-14 дней',
         value: 50,
     },
     {
-        title: '14-30 дней',
+        title: '15-30 дней',
         value: 40,
     },
     {
-        title: '30 дней и более',
+        title: '31 день и более',
         value: 30,
     },
 ];
