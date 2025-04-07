@@ -24,23 +24,23 @@ export const MIN_DRIVING_EXPERIENCE = 3;
 export const DIFFERENT_PRICE = [
     {
         title: '1-3 дня',
-        value: 70,
+        value: 80,
     },
     {
         title: '4-7 дней',
-        value: 60,
+        value: 70,
     },
     {
         title: '8-14 дней',
-        value: 50,
+        value: 60,
     },
     {
         title: '15-30 дней',
-        value: 40,
+        value: 50,
     },
     {
         title: '31 день и более',
-        value: 30,
+        value: 40,
     },
 ];
 
